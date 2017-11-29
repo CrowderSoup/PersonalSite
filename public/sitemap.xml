@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://crowdersoup.com/about/</loc>
+    <lastmod>2017-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</loc>
+    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</loc>
+    <lastmod>2016-04-08T07:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</loc>
+    <lastmod>2016-01-21T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/raspberry-pi/raspberry-pi-zero-giveaway/</loc>
+    <lastmod>2016-01-13T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/site-updates/new-theme/</loc>
+    <lastmod>2016-01-06T16:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/personal/life/resolutions-2016/</loc>
+    <lastmod>2016-01-02T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/personal/life/hour-of-code/</loc>
+    <lastmod>2015-12-10T11:35:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/programming/css/using-vh-with-calc-in-css/</loc>
+    <lastmod>2015-11-17T09:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</loc>
+    <lastmod>2015-11-16T13:20:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</loc>
+    <lastmod>2015-11-13T07:15:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</loc>
+    <lastmod>2015-11-11T12:46:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</loc>
+    <lastmod>2015-10-28T00:09:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/christmas/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/personal/life/christmas-2015/</loc>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/</loc>
+    <lastmod>2017-11-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/css/</loc>
+    <lastmod>2015-11-17T09:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/css/</loc>
+    <lastmod>2015-11-17T09:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/debugging/</loc>
+    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/design/</loc>
+    <lastmod>2015-11-17T09:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/django/</loc>
+    <lastmod>2016-04-08T07:15:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/front-end/</loc>
+    <lastmod>2016-01-06T16:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/git/</loc>
+    <lastmod>2015-11-13T07:15:33+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/giveaway/</loc>
+    <lastmod>2016-01-13T09:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/goals/</loc>
+    <lastmod>2016-01-02T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/hour-of-code/</loc>
+    <lastmod>2015-12-10T11:35:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/ifttt/</loc>
+    <lastmod>2016-04-08T07:15:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/javascript/</loc>
+    <lastmod>2015-11-16T13:20:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/javascript/</loc>
+    <lastmod>2015-11-16T13:20:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/life/</loc>
+    <lastmod>2016-01-02T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/maker/</loc>
+    <lastmod>2016-04-08T07:15:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/pelican/</loc>
+    <lastmod>2016-01-06T16:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/personal/</loc>
+    <lastmod>2016-01-02T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/post/</loc>
+    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/powershell/</loc>
+    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/professional/</loc>
+    <lastmod>2016-01-02T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/programming/</loc>
+    <lastmod>2015-11-17T09:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/programming/</loc>
+    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/projects/</loc>
+    <lastmod>2016-01-21T13:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/python/</loc>
+    <lastmod>2016-04-08T07:15:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/raspberry-pi/</loc>
+    <lastmod>2016-01-21T13:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/raspberry-pi/</loc>
+    <lastmod>2016-01-21T13:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/resolutions/</loc>
+    <lastmod>2016-01-02T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/scripting/</loc>
+    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/site-updates/</loc>
+    <lastmod>2016-01-06T16:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/</loc>
+    <lastmod>2015-11-17T09:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/teaching/</loc>
+    <lastmod>2015-12-10T11:35:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/tips/</loc>
+    <lastmod>2015-11-16T13:20:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/tools/</loc>
+    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/torrent/</loc>
+    <lastmod>2016-01-21T13:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/update/</loc>
+    <lastmod>2016-01-06T16:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/categories/utils/</loc>
+    <lastmod>2015-10-28T00:09:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/volunteer/</loc>
+    <lastmod>2015-12-10T11:35:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/vscode/</loc>
+    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/zero/</loc>
+    <lastmod>2016-01-13T09:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

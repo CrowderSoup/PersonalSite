@@ -1,0 +1,30 @@
+baseurl = "https://crowdersoup.com/"
+title = "CrowderSoup"
+theme = "mainroad"
+languageCode = "en-us"
+disqusShortname = "aaroncrowder"
+googleAnalytics = ""
+
+[Author]
+    name = "Aaron Crowder"
+    bio = "Husband, Father, Software Developer. In that order."
+    avatar = "http://www.gravatar.com/avatar/9777c65c27d6a66948d6b1f2b0379392.jpg?s=512"
+
+
+[Params]
+    subtitle = "It's late and I don't know what to put here..." # Subtitle of your site
+    description = "" # Description of your site
+    opengraph = true
+    readmore = false # Show "Read more" button in list if true
+    leftsidebar = false # Move sidebar to the left side if true
+    authorbox = true
+    post_navigation = true
+    postSections = ["post"]
+
+
+[Params.widgets]
+    search = false # Enable "Search" widget
+    recent_articles = true # Enable "Recent arcticles" widget
+    categories = true # Enable "Categories" widget
+    tags = true # Enable "Tags" widget
+    tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on CrowderSoup</title>
+    <link>https://crowdersoup.com/categories/programming/</link>
+    <description>Recent content in Programming on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Apr 2016 09:54:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debugging PowerShell in VSCode</title>
+      <link>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</link>
+      <pubDate>Tue, 26 Apr 2016 09:54:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</guid>
+      <description>Yesterday I learned a neat trick with Visual Studio Code when working on some PowerShell scripts to help orchestrate build and deployment of our projects (more on that in a different post). I knew that VSCode had a debugger, but I didn&amp;rsquo;t realize that a debugger for PowerShell had been added via an extension.
+I had installed this extension some time ago to help with writing PowerShell scripts in VSCode, but I was running my PowerShell prompt in another window to actually test them.</description>
+    </item>
+    
+    <item>
+      <title>Use IFTTT Maker Channel to Trigger Events in a Django App</title>
+      <link>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</link>
+      <pubDate>Fri, 08 Apr 2016 07:15:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</guid>
+      <description>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using IFTTT and a custom web app. For this project I went with Django to build my app out. I&amp;rsquo;d never used it before so I wanted a chance to play with it.</description>
+    </item>
+    
+    <item>
+      <title>Anatomy of a Commit Message</title>
+      <link>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</link>
+      <pubDate>Fri, 13 Nov 2015 07:15:33 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</guid>
+      <description>1. Subject Line The Subject Line is the first line of your commit message. Often the subject alone is enough, but if it&amp;rsquo;s not and you need a body be sure to separate the subject and body with a blank line.
+ First line of a commit message Often the only part you&amp;rsquo;ll need Separated from the body by a blank line Soft limit of 50 characters, hard limit of 69  Github&amp;rsquo;s interface truncates the subject line at 69 characters  Capitalize!</description>
+    </item>
+    
+  </channel>
+</rss>

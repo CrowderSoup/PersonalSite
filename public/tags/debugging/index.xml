@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debugging on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/debugging/</link>
+    <description>Recent content in Debugging on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Apr 2016 09:54:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/debugging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debugging PowerShell in VSCode</title>
+      <link>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</link>
+      <pubDate>Tue, 26 Apr 2016 09:54:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</guid>
+      <description>Yesterday I learned a neat trick with Visual Studio Code when working on some PowerShell scripts to help orchestrate build and deployment of our projects (more on that in a different post). I knew that VSCode had a debugger, but I didn&amp;rsquo;t realize that a debugger for PowerShell had been added via an extension.
+I had installed this extension some time ago to help with writing PowerShell scripts in VSCode, but I was running my PowerShell prompt in another window to actually test them.</description>
+    </item>
+    
+  </channel>
+</rss>

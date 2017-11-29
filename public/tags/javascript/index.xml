@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/javascript/</link>
+    <description>Recent content in Javascript on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Nov 2015 13:20:08 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Managing Scope Using Call, Apply, and Bind</title>
+      <link>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</link>
+      <pubDate>Mon, 16 Nov 2015 13:20:08 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</guid>
+      <description>Call Calls a function, with the specified arguments passed in
+The first argument becomes this, the rest are passed in as regular arguments. Using call allows you to maintain the scope of this accross methods. It works like this:
+ Here we&amp;rsquo;re using prototypical inheritance to allow us to inheirit properties from Animal in Dog and Cat. Using call allows us to invoke Animal to initialize it&amp;rsquo;s properties while maintaining the correct scope.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript: Array&#39;s with named Properties</title>
+      <link>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</link>
+      <pubDate>Wed, 11 Nov 2015 12:46:49 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</guid>
+      <description>Adding named properties to arrays in JavaScript can be handy in a few different cases. For instance:
+ You need a nice formatted title / description for a data set. Rather than having multiple objects you can use named properties and get away with only using one. You want to add some functions to an array for whatever reason Lots of other reasons that I can&amp;rsquo;t think of right now!  Basically, this just buys you a nice way to encapsulate all the data you might need, without having to use an object with a nested array, or multiple objects.</description>
+    </item>
+    
+  </channel>
+</rss>

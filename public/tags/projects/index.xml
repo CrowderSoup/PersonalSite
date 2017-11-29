@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/projects/</link>
+    <description>Recent content in Projects on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Jan 2016 13:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build a Torrent Machine and Network Share</title>
+      <link>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</link>
+      <pubDate>Thu, 21 Jan 2016 13:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</guid>
+      <description>When I first got a Raspberry Pi the first thing I wanted to build was a home server. I wanted to have a central place at home to store files. I also thought it would be nice to have a torrent machine to handle downloading whatever I wanted. This past weekend I was finally able to get around to building it with a Raspberry Pi 2.
+I chose to use Diet Pi as my OS.</description>
+    </item>
+    
+    <item>
+      <title>Christmas of 2015</title>
+      <link>https://crowdersoup.com/post/personal/life/christmas-2015/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/christmas-2015/</guid>
+      <description>This year&amp;rsquo;s Christmas was one for the books. As a father it was SO much fun to watch my two girls have the time of their little lives getting and playing with all their new toys. Their excitement and wonderment meant the world to me, even if I know they don&amp;rsquo;t fully understand everything.
+Before we went down, we had the girls get their Christmas Jamies on!
+When we went downstairs there wasn&amp;rsquo;t much ceremony to it at all.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ifttt on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/ifttt/</link>
+    <description>Recent content in Ifttt on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Apr 2016 07:15:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/ifttt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Use IFTTT Maker Channel to Trigger Events in a Django App</title>
+      <link>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</link>
+      <pubDate>Fri, 08 Apr 2016 07:15:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</guid>
+      <description>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using IFTTT and a custom web app. For this project I went with Django to build my app out. I&amp;rsquo;d never used it before so I wanted a chance to play with it.</description>
+    </item>
+    
+  </channel>
+</rss>

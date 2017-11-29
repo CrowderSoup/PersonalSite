@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/teaching/</link>
+    <description>Recent content in Teaching on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Dec 2015 11:35:26 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/teaching/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hour of Code</title>
+      <link>https://crowdersoup.com/post/personal/life/hour-of-code/</link>
+      <pubDate>Thu, 10 Dec 2015 11:35:26 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/hour-of-code/</guid>
+      <description>Yesterday I took part in the Hour of Code at my local high school as a volunteer.In fact, it was at the high school that I attended. I had a lot of fun and I was excited to see the stundents gain a deeper understanding of code.
+I was especially impressed with the number of young women in the class that seemed to really enjoy it. It&amp;rsquo;s a really common misunderstanding that people hold that girls aren&amp;rsquo;t interested in tech.</description>
+    </item>
+    
+  </channel>
+</rss>

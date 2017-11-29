@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on CrowderSoup</title>
+    <link>https://crowdersoup.com/categories/</link>
+    <description>Recent content in Categories on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://crowdersoup.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Css</title>
+      <link>https://crowdersoup.com/categories/css/</link>
+      <pubDate>Tue, 17 Nov 2015 09:45:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/categories/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://crowdersoup.com/categories/javascript/</link>
+      <pubDate>Mon, 16 Nov 2015 13:20:08 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Life</title>
+      <link>https://crowdersoup.com/categories/life/</link>
+      <pubDate>Sat, 02 Jan 2016 06:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/categories/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://crowdersoup.com/categories/programming/</link>
+      <pubDate>Tue, 26 Apr 2016 09:54:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://crowdersoup.com/categories/raspberry-pi/</link>
+      <pubDate>Thu, 21 Jan 2016 13:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/categories/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Site Updates</title>
+      <link>https://crowdersoup.com/categories/site-updates/</link>
+      <pubDate>Wed, 06 Jan 2016 16:30:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/categories/site-updates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://crowdersoup.com/categories/tools/</link>
+      <pubDate>Tue, 26 Apr 2016 09:54:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>https://crowdersoup.com/categories/utils/</link>
+      <pubDate>Wed, 28 Oct 2015 00:09:20 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/categories/utils/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

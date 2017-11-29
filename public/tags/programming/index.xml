@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/programming/</link>
+    <description>Recent content in Programming on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Nov 2015 09:45:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using vh with calc In CSS</title>
+      <link>https://crowdersoup.com/post/programming/css/using-vh-with-calc-in-css/</link>
+      <pubDate>Tue, 17 Nov 2015 09:45:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/css/using-vh-with-calc-in-css/</guid>
+      <description>I often have need to build layout&amp;rsquo;s that vary depending on the content put in them. I can&amp;rsquo;t always count on that content being the same (cough CMSs cough). It&amp;rsquo;s just one of those things you have to do.
+One thing I&amp;rsquo;m having to do a lot though, is making the body of a page take up a certain amount of space so that the footer doesn&amp;rsquo;t look weird. In the past I&amp;rsquo;ve used JavaScript to make the footer take up the remaining space on the page if the content didn&amp;rsquo;t take up enough.</description>
+    </item>
+    
+    <item>
+      <title>Managing Scope Using Call, Apply, and Bind</title>
+      <link>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</link>
+      <pubDate>Mon, 16 Nov 2015 13:20:08 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</guid>
+      <description>Call Calls a function, with the specified arguments passed in
+The first argument becomes this, the rest are passed in as regular arguments. Using call allows you to maintain the scope of this accross methods. It works like this:
+ Here we&amp;rsquo;re using prototypical inheritance to allow us to inheirit properties from Animal in Dog and Cat. Using call allows us to invoke Animal to initialize it&amp;rsquo;s properties while maintaining the correct scope.</description>
+    </item>
+    
+    <item>
+      <title>Anatomy of a Commit Message</title>
+      <link>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</link>
+      <pubDate>Fri, 13 Nov 2015 07:15:33 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</guid>
+      <description>1. Subject Line The Subject Line is the first line of your commit message. Often the subject alone is enough, but if it&amp;rsquo;s not and you need a body be sure to separate the subject and body with a blank line.
+ First line of a commit message Often the only part you&amp;rsquo;ll need Separated from the body by a blank line Soft limit of 50 characters, hard limit of 69  Github&amp;rsquo;s interface truncates the subject line at 69 characters  Capitalize!</description>
+    </item>
+    
+    <item>
+      <title>JavaScript: Array&#39;s with named Properties</title>
+      <link>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</link>
+      <pubDate>Wed, 11 Nov 2015 12:46:49 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</guid>
+      <description>Adding named properties to arrays in JavaScript can be handy in a few different cases. For instance:
+ You need a nice formatted title / description for a data set. Rather than having multiple objects you can use named properties and get away with only using one. You want to add some functions to an array for whatever reason Lots of other reasons that I can&amp;rsquo;t think of right now!  Basically, this just buys you a nice way to encapsulate all the data you might need, without having to use an object with a nested array, or multiple objects.</description>
+    </item>
+    
+    <item>
+      <title>Powershell Markdown Preview</title>
+      <link>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</link>
+      <pubDate>Wed, 28 Oct 2015 00:09:20 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</guid>
+      <description>I&amp;rsquo;m at Angle Brackets. I&amp;rsquo;ve decided that I wanted to try taking all my notes in vim. I LOVE using vim. It&amp;rsquo;s a really awesome, powerful, and extendable command-line editor. I enjoy that it&amp;rsquo;s really distraction free. Being distracted is something that I struggle with so I really look for ways to stay focused.
+I write in Markdown as well. It&amp;rsquo;s a great way to get a simple, clean, well formatted plain text document that can be processed and produce HTML.</description>
+    </item>
+    
+  </channel>
+</rss>

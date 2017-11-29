@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Goals on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/goals/</link>
+    <description>Recent content in Goals on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Jan 2016 06:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/goals/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resolutions for 2016</title>
+      <link>https://crowdersoup.com/post/personal/life/resolutions-2016/</link>
+      <pubDate>Sat, 02 Jan 2016 06:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/resolutions-2016/</guid>
+      <description>It seems like the &amp;ldquo;thing to do&amp;rdquo; at the beginning of each new year is to make New Years Resolutions. If you&amp;rsquo;re at all into blogging then you know that you then have to publish those resolutions for all the people who don&amp;rsquo;t read your blog to see. That&amp;rsquo;s who/what this post is for.
+I wanted to make my resolutions less about &amp;ldquo;I want to lose weight&amp;rdquo;, and more focused on programming, open source, and this blog.</description>
+    </item>
+    
+  </channel>
+</rss>

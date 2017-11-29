@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/git/</link>
+    <description>Recent content in Git on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Nov 2015 07:15:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anatomy of a Commit Message</title>
+      <link>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</link>
+      <pubDate>Fri, 13 Nov 2015 07:15:33 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</guid>
+      <description>1. Subject Line The Subject Line is the first line of your commit message. Often the subject alone is enough, but if it&amp;rsquo;s not and you need a body be sure to separate the subject and body with a blank line.
+ First line of a commit message Often the only part you&amp;rsquo;ll need Separated from the body by a blank line Soft limit of 50 characters, hard limit of 69  Github&amp;rsquo;s interface truncates the subject line at 69 characters  Capitalize!</description>
+    </item>
+    
+  </channel>
+</rss>

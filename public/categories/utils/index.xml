@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utils on CrowderSoup</title>
+    <link>https://crowdersoup.com/categories/utils/</link>
+    <description>Recent content in Utils on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Oct 2015 00:09:20 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/categories/utils/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Powershell Markdown Preview</title>
+      <link>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</link>
+      <pubDate>Wed, 28 Oct 2015 00:09:20 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</guid>
+      <description>I&amp;rsquo;m at Angle Brackets. I&amp;rsquo;ve decided that I wanted to try taking all my notes in vim. I LOVE using vim. It&amp;rsquo;s a really awesome, powerful, and extendable command-line editor. I enjoy that it&amp;rsquo;s really distraction free. Being distracted is something that I struggle with so I really look for ways to stay focused.
+I write in Markdown as well. It&amp;rsquo;s a great way to get a simple, clean, well formatted plain text document that can be processed and produce HTML.</description>
+    </item>
+    
+  </channel>
+</rss>

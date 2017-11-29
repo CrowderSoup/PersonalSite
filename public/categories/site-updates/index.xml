@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Site Updates on CrowderSoup</title>
+    <link>https://crowdersoup.com/categories/site-updates/</link>
+    <description>Recent content in Site Updates on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jan 2016 16:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/categories/site-updates/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Theme!</title>
+      <link>https://crowdersoup.com/post/site-updates/new-theme/</link>
+      <pubDate>Wed, 06 Jan 2016 16:30:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/site-updates/new-theme/</guid>
+      <description>I recently started using Pelican static site generator for this blog. I was drawn to it for a few reasons:
+ It uses Jinja2 for templates, which I love. It written in python It reminds me a lot of Flask (this might be because of using Jinja2&amp;hellip;)  I&amp;rsquo;ve done a few interesting things with this site though. I&amp;rsquo;m hosting the repo that contains the source content, configuration, etc. on Gitlab.</description>
+    </item>
+    
+  </channel>
+</rss>

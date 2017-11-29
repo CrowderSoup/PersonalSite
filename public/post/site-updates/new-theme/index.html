@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Theme!</title>
+
+<meta name="generator" content="Hugo 0.31.1" />
+<meta property="og:title" content="New Theme!" />
+<meta property="og:description" content="I recently started using Pelican static site generator for this blog. I was drawn to it for a few reasons:
+ It uses Jinja2 for templates, which I love. It written in python It reminds me a lot of Flask (this might be because of using Jinja2&hellip;)  I&rsquo;ve done a few interesting things with this site though. I&rsquo;m hosting the repo that contains the source content, configuration, etc. on Gitlab." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://crowdersoup.com/post/site-updates/new-theme/" />
+
+
+
+<meta property="article:published_time" content="2016-01-06T16:30:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-01-06T16:30:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="CrowderSoup" rel="home">
+						<h1 class="logo__title">CrowderSoup</h1>
+						<h2 class="logo__tagline">It&#39;s late and I don&#39;t know what to put here...</h2>
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item"><a class="menu__link" href="/about/">ABOUT</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+<main class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">New Theme!</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2016-01-06T16:30:00">January 06, 2016</time>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+					<a class="meta-categories__link" href="/categories/site-updates" rel="category">Site Updates</a></span>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			
+
+<p>I recently started using <a href="1">Pelican</a> static site generator for this blog. I was
+drawn to it for a few reasons:</p>
+
+<ol>
+<li>It uses <a href="2">Jinja2</a> for templates, which I love.</li>
+<li>It written in python</li>
+<li>It reminds me a lot of <a href="3">Flask</a> (this might be because of using Jinja2&hellip;)</li>
+</ol>
+
+<p>I&rsquo;ve done a few interesting things with this site though. I&rsquo;m hosting the repo
+that contains the source content, configuration, etc. on <a href="4">Gitlab</a>. I
+initially thought I&rsquo;d host this site using Gitlab&rsquo;s new &ldquo;Pages&rdquo; feature, but it
+wasn&rsquo;t quite up to snuff yet. For one, the &ldquo;build&rdquo; process was REALLY slow. For
+two, you couldn&rsquo;t use a custom domain.</p>
+
+<p>Instead, I decided to host the site out of a <a href="5">Github</a> repository. Github
+Pages deploy in seconds and they allow me to use a custom domain for my site. I
+actually use <a href="6">Make</a> to build the site locally during testing as well as
+&ldquo;publishing&rdquo; it to my Github repository. This means that the site and it&rsquo;s
+content are replicated to two different locations on two different services so
+my data and content are as safe as possible (from things like accidental deletions,
+services shutting down and the like).</p>
+
+<h3 id="custom-theme">Custom Theme</h3>
+
+<p>I wanted to build my own theme for Pelican rather than using one from their
+<a href="7">Theme Repository</a>. I felt like I could build something in a fairly short
+amount of time that would best match my tastes and how I wanted my site and
+content to come across.</p>
+
+<p>It took me a few days working here and there, but what you&rsquo;re looking at now is
+my new custom theme!</p>
+
+<h4 id="process">Process</h4>
+
+<p>Building a Pelican theme was actually a fairly straightforward process.
+Especially compared to some of the CMSs I&rsquo;ve built themes for in the past
+(<em>cough</em> WordPress <em>cough</em>). <a href="8">Their guide</a> gives you a list of files you&rsquo;ll
+need, along with all the different variables and configuration options available
+to you.</p>
+
+<p>As I mentioned before, Pelican uses Jinja2. All the template files are written
+using it. The theme documentation gives you an idea of what each theme file
+should contain or look like. In a few cases I looked at what some other themes
+where doing from the <a href="7">Theme Repo</a>. Those two resources combined gave me the
+tools I needed to get building.</p>
+
+<h4 id="personalsite-theme">PersonalSite-theme</h4>
+
+<p>This theme, lovingly called &ldquo;PersonalSite-theme&rdquo; (or coldly, can never remember
+which it is), uses a couple of fun technologies to improve the development
+process.</p>
+
+<p><strong>NPM</strong>
+I&rsquo;m using NPM to install various JavaScript packages. A lot of folks combine
+NPM and <a href="9">Bower</a>, using NPM for cli tools, and Bower for client-side JavaScript
+Libraries (like jQuery, Bootstrap, etc). I decided to <strong>just</strong> use NPM, as they&rsquo;ve
+fixed a lot of the issues that made using Bower a requirement.</p>
+
+<p>I use NPM to install:
+- <a href="10">Gulp</a>, a task runner.
+- <a href="14">Gulp-Sass</a>, a tool that let&rsquo;s me compile <a href="15">Sass</a> using Gulp.
+- <a href="11">Bootstrap</a>, a client-side UI framework. Provides CSS styles and JavaScript
+UI components that make building a clean / beautiful UI somewhat trivial.
+- <a href="12">jQuery</a>, we all know it. Some of us love it, some hate it. I needed it.
+- <a href="13">Font Awesome</a>, a font icon library.</p>
+
+<p><strong>Gulp</strong>
+Gulp is a really important tool that I used in my workflow for developing this
+theme. After using NPM to install packages I then used Gulp to to move things
+from the <code>node_modules</code> directory that they&rsquo;re downloaded to into the <code>static</code>
+folder of the theme. Gulp was also responsible for watching my <code>*.sass</code> file for
+changes and running the compiler.</p>
+
+<p>These tools combined really streamlined my workflow and made development a
+breeze. Before this project I had used NPM, but not Gulp. I <em>had</em> used another
+task runner, but Gulp was by far the best one I&rsquo;ve used.</p>
+
+<h4 id="usage">Usage</h4>
+
+<p>So, you want to use this theme for your own Pelican site? Well, it&rsquo;s REALLY easy.
+You must first have <a href="https://nodejs.org/en/">NodeJS</a> installed, which
+comes with <code>npm</code>, a package management tool. Once you have that you can clone
+the repository to where ever you keep your Pelican themes (I personally put them
+as submodules of my Pelican sites repo, but that&rsquo;s a topic for another post) and
+run <code>npm install &amp;&amp; gulp</code> at the root of the theme repo.</p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>I hope you enjoyed this post and learning more about Pelican and my sites theme
+in general. If you have any specific questions about this theme or it&rsquo;s usage
+let me know in the comments or <a href="16">on Twitter</a>.</p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/update/" rel="tag">update</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/front-end/" rel="tag">front-end</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/pelican/" rel="tag">pelican</a></li>
+	</ul>
+</div>
+
+	</article>
+	
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Aaron Crowder avatar" src="http://www.gravatar.com/avatar/9777c65c27d6a66948d6b1f2b0379392.jpg?s=512" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Aaron Crowder</span>
+	</div>
+	<div class="authorbox__description">
+		Husband, Father, Software Developer. In that order.
+	</div>
+</div>
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/post/personal/life/resolutions-2016/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Resolutions for 2016</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next col-1-2">
+		<a class="post-nav__link" href="/post/raspberry-pi/raspberry-pi-zero-giveaway/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">Raspberry Pi Zero Giveaway: Review</p></a>
+	</div>
+</nav>
+
+	
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "aaroncrowder" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+</main>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/programming/tools/powershell-debugging-in-vscode/">Debugging PowerShell in VSCode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/programming/python/django/use-ifttt-to-trigger-events/">Use IFTTT Maker Channel to Trigger Events in a Django App</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/raspberry-pi/torrent-machine-and-network-share/">Build a Torrent Machine and Network Share</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/raspberry-pi/raspberry-pi-zero-giveaway/">Raspberry Pi Zero Giveaway: Review</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/site-updates/new-theme/">New Theme!</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/personal/life/resolutions-2016/">Resolutions for 2016</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/personal/life/hour-of-code/">Hour of Code</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/programming/css/using-vh-with-calc-in-css/">Using vh with calc In CSS</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/programming/javascript/managing-scope-using-call-apply-and-bind/">Managing Scope Using Call, Apply, and Bind</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/programming/anatomy-of-a-commit-message/">Anatomy of a Commit Message</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/css">Css</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/javascript">Javascript</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/life">Life</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/programming">Programming</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/raspberry-pi">Raspberry-Pi</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/site-updates">Site-Updates</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/utils">Utils</a></li>
+		</ul>
+	</div>
+</div>
+	
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/christmas" title="christmas">christmas</a>
+		<a class="widget__link widget__link--taglist" href="/tags/css" title="css">css</a>
+		<a class="widget__link widget__link--taglist" href="/tags/debugging" title="debugging">debugging</a>
+		<a class="widget__link widget__link--taglist" href="/tags/design" title="design">design</a>
+		<a class="widget__link widget__link--taglist" href="/tags/django" title="django">django</a>
+		<a class="widget__link widget__link--taglist" href="/tags/front-end" title="front-end">front-end</a>
+		<a class="widget__link widget__link--taglist" href="/tags/git" title="git">git</a>
+		<a class="widget__link widget__link--taglist" href="/tags/giveaway" title="giveaway">giveaway</a>
+		<a class="widget__link widget__link--taglist" href="/tags/goals" title="goals">goals</a>
+		<a class="widget__link widget__link--taglist" href="/tags/hour-of-code" title="hour-of-code">hour-of-code</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ifttt" title="ifttt">ifttt</a>
+		<a class="widget__link widget__link--taglist" href="/tags/javascript" title="javascript">javascript</a>
+		<a class="widget__link widget__link--taglist" href="/tags/maker" title="maker">maker</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pelican" title="pelican">pelican</a>
+		<a class="widget__link widget__link--taglist" href="/tags/personal" title="personal">personal</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powershell" title="powershell">powershell</a>
+		<a class="widget__link widget__link--taglist" href="/tags/professional" title="professional">professional</a>
+		<a class="widget__link widget__link--taglist" href="/tags/programming" title="programming">programming</a>
+		<a class="widget__link widget__link--taglist" href="/tags/projects" title="projects">projects</a>
+		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python</a>
+		<a class="widget__link widget__link--taglist" href="/tags/raspberry-pi" title="raspberry-pi">raspberry-pi</a>
+		<a class="widget__link widget__link--taglist" href="/tags/resolutions" title="resolutions">resolutions</a>
+		<a class="widget__link widget__link--taglist" href="/tags/scripting" title="scripting">scripting</a>
+		<a class="widget__link widget__link--taglist" href="/tags/teaching" title="teaching">teaching</a>
+		<a class="widget__link widget__link--taglist" href="/tags/tips" title="tips">tips</a>
+		<a class="widget__link widget__link--taglist" href="/tags/torrent" title="torrent">torrent</a>
+		<a class="widget__link widget__link--taglist" href="/tags/update" title="update">update</a>
+		<a class="widget__link widget__link--taglist" href="/tags/volunteer" title="volunteer">volunteer</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vscode" title="vscode">vscode</a>
+		<a class="widget__link widget__link--taglist" href="/tags/zero" title="zero">zero</a>
+	</div>
+</div>
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 CrowderSoup. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use IFTTT Maker Channel to Trigger Events in a Django App</title>
+
+<meta name="generator" content="Hugo 0.31.1" />
+<meta property="og:title" content="Use IFTTT Maker Channel to Trigger Events in a Django App" />
+<meta property="og:description" content="A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using IFTTT and a custom web app. For this project I went with Django to build my app out. I&rsquo;d never used it before so I wanted a chance to play with it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/" />
+
+
+
+<meta property="article:published_time" content="2016-04-08T07:15:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-04-08T07:15:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="CrowderSoup" rel="home">
+						<h1 class="logo__title">CrowderSoup</h1>
+						<h2 class="logo__tagline">It&#39;s late and I don&#39;t know what to put here...</h2>
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item"><a class="menu__link" href="/about/">ABOUT</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+<main class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">Use IFTTT Maker Channel to Trigger Events in a Django App</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2016-04-08T07:15:00">April 08, 2016</time>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+					<a class="meta-categories__link" href="/categories/programming" rel="category">Programming</a></span>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			
+
+<p>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using <a href="https://ifttt.com" title="If This Then That">IFTTT</a> and a custom web app. For this project I went with <a href="https://djangoproject.org" title="Django Project">Django</a> to build my app out. I&rsquo;d never used it before so I wanted a chance to play with it.</p>
+
+<h2 id="the-idea">The idea</h2>
+
+<p>The idea is pretty simple. IFTTT will, using their <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel">Maker Channel</a>, send a request to any endpoint that you want with a custom payload. I figured I could have that run daily to hit my app, which would then pull a reason that I love my wife from the database and send it to her.</p>
+
+<p>In my case, I decided to utilize IFTTT to also <strong>send</strong> the love notes as well. The Maker Channel can not only send requests, but it can receive them as well. So I would pull a reason from the database, send that reason <strong>back</strong> to IFTTT which would then email it to my wife for me using my own Gmail account. Believe it or not, this was easier than trying to hook up my Gmail account to send the emails myself.</p>
+
+<h2 id="execution">Execution</h2>
+
+<h3 id="django-app">Django App</h3>
+
+<p>My Django app is <strong>really</strong> simple. I have two routes, my <code>admin</code> route and a single <code>index</code> route. I&rsquo;m using the default Django admin console to add love notes to the database. The index route will handle requests from IFTTT to trigger sending a love note. It also serves up some basic HTML in case anyone accidentally finds this application in the wild. IFTTT passes along a security token so that I know when a request should trigger sending a love note or not.</p>
+
+<p>Before I dive into explaining the code, you can check out the <a href="https://github.com/CrowderSoup/LoveDB" title="Github Repo for the LoveDb">Github Repo</a> for yourself. Feel free to copy all or parts of it for your own use!</p>
+
+<h4 id="security">Security</h4>
+
+<p>You&rsquo;re not going to want just anyone to be able to trigger sending love notes from your app. You&rsquo;ll need some security in place. Thankfully this is pretty simple using <code>Environment Variables</code> in your Django app settings. The relevant part of my <code>settings.py</code> looks like this:</p>
+
+<pre><code class="language-python">SECRET_KEY = os.environ.get('SECRET_KEY') or &quot;youhavemyheart&quot;
+IFTTT_KEY = os.environ.get('IFTTT_KEY') or &quot;youhavemyheart&quot;
+</code></pre>
+
+<p>I&rsquo;m using <code>os.environ.get</code> to pull the values from my <code>Environment Variables</code>. To learn more about setting this up when you Deploy your app check out this guide check out these two links:</p>
+
+<ol>
+<li><a href="http://supervisord.org/subprocess.html#subprocess-environment" title="Subprocess Env">Using Supervisord</a></li>
+<li><a href="https://coderwall.com/p/93jakg/multiple-env-vars-with-uwsgi" title="Multiple Env Vars with uwsgi">Using uwsgi</a></li>
+</ol>
+
+<p>The <code>IFTTT_KEY</code> might be a little confusing, but when you actually connect the <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel">Maker Channel</a> to your IFTTT account you&rsquo;ll see a part that says &ldquo;Your key is:&ldquo;. You just need to use that secrete key in your own <code>Environment Variables</code>. Please be sure not to put this value (or your <code>SECRETE_KEY</code>) in your actual code. Doing so is a huge security risk if you plan to push your code to a remote respository or share it in any way.</p>
+
+<h4 id="index-route">Index Route</h4>
+
+<p>Here&rsquo;s what the <code>index</code> route looks like (if not a little simplified):</p>
+
+<pre><code class="language-python">from django.http import HttpResponse
+from .models import Reason
+import requests, os
+from LoveDb.settings import SECRET_KEY, IFTTT_KEY
+
+def index(request):
+    response = &quot;&quot;&quot;
+        A brief message in case anyone arrives at this page by mistake.
+    &quot;&quot;&quot;
+
+    their_key = request.GET.get('key', '')
+    my_key = SECRET_KEY
+
+    if(their_key == my_key):
+        reasons = Reason.objects.filter(been_used=False).order_by('-created_date')[:1]
+
+        if(len(reasons) &gt; 0):
+            reason = reasons[0]
+
+            love_note = {}
+            love_note['value1'] = reason.reason_text
+
+            # Send via If This Then That
+            requests.post(&quot;https://maker.ifttt.com/trigger/send_love_note/with/key/{0}&quot;.format(IFTTT_KEY), data=love_note)
+
+            # Update reason so that we don't use the same one twice (wouldn't that be embarrassing!)
+            reason.been_used = True
+            reason.save()
+
+    return HttpResponse(response)
+</code></pre>
+
+<h4 id="love-note-or-reason-model">Love note (or <code>Reason</code>) model</h4>
+
+<p>Of course, I need to actually STORE the love notes somewhere. I created a <code>Reason</code> model to do this.</p>
+
+<pre><code class="language-python">from django.db import models
+
+
+class Reason(models.Model):
+    reason_text = models.CharField(max_length=200)
+    been_used = models.BooleanField()
+    created_date = models.DateTimeField('date created')
+
+    def __str__(self):
+        return self.reason_text
+</code></pre>
+
+<p>I also need to be able to add things to the database using this model, enter Django admin. The Django admin was actually one of the biggest reasons I used Django for this project. I didn&rsquo;t have time to write user auth or CRUD interfaces. I just needed something simple that did the job. And simple it is:</p>
+
+<pre><code class="language-python">from django.contrib import admin
+
+from .models import Reason
+
+class ReasonAdmin(admin.ModelAdmin):
+    list_display = ('reason_text', 'created_date', 'been_used')
+    list_filter = ('been_used', 'created_date')
+
+admin.site.register(Reason, ReasonAdmin)
+</code></pre>
+
+<h3 id="ifttt">IFTTT</h3>
+
+<p>The maker channel is pretty easy to use. If you&rsquo;re not familiar with IFTTT, then you should know that IFTTT has two types of things it can do / handle:</p>
+
+<ol>
+<li>Triggers: things that do things based on certain events or at certain times</li>
+<li>Actions: Things that are triggered by other events.</li>
+</ol>
+
+<p>So, for my purposes I&rsquo;m going to use the <a href="https://ifttt.com/date_and_time" title="IFTTT: Date &amp; Time Channel">Date &amp; Time</a> Channel to <em>trigger</em> an <em>action</em> on the Maker Channel. The action on the Maker Channel will make a request to my Django app to trigger sending a love note.</p>
+
+<p>Sending of the love note will <em>also</em> be done by IFTTT. Once my app gets a love note and is ready to send it I&rsquo;ll pass it back to IFTTT, again using the Maker Channel to consume a request (this is a <em>trigger</em>).</p>
+
+<h4 id="trigger-sending-of-a-love-note">Trigger Sending of a Love Note</h4>
+
+<p>This recipe is really simple. Just pick a time and enter the URL of your Django app that you&rsquo;re using to recieve the trigger. Don&rsquo;t forget to enter the secret key you set up for your app in a <code>GET</code> parameter on the URL. Your URL should look something like this:</p>
+
+<p><code>http://yourawesomelovedb.com/?key=YOUR_SECRET_KEY_HERE</code></p>
+
+<p>And here&rsquo;s the recipe for you to use right here!</p>
+
+<p><a href="https://ifttt.com/view_embed_recipe/406032-trigger-sending-a-love-note-daily" target = "_blank" class="embed_recipe embed_recipe-l_33" id= "embed_recipe-406032"><img src= 'https://ifttt.com/recipe_embed_img/406032' alt="IFTTT Recipe: Trigger Sending a Love Note Daily connects date-time to maker" width="370px" style="max-width:100%"/></a><script async type="text/javascript" src= "//ifttt.com/assets/embed_recipe.js"></script></p>
+
+<h4 id="send-the-actual-love-note">Send the actual Love Note</h4>
+
+<p>Sending the actual love note is really simple. You just hook the Maker Channel up to gmail and away you go! I&rsquo;m using the <code>Value1</code> part of the Maker Channel trigger for the body of the love note, which you saw in the <code>index</code> route of the app. As long as you copy that index route this recipe should be as simple as entering the name of the Love Note event (I named mine <code>send_love_note</code> which you saw in the <code>index</code> route) and the Email address of the person you&rsquo;re sending the love note to.</p>
+
+<p><a href="https://ifttt.com/view_embed_recipe/406029-send-a-love-note" target = "_blank" class="embed_recipe embed_recipe-l_16" id= "embed_recipe-406029"><img src= 'https://ifttt.com/recipe_embed_img/406029' alt="IFTTT Recipe: Send a Love Note connects maker to gmail" width="370px" style="max-width:100%"/></a><script async type="text/javascript" src= "//ifttt.com/assets/embed_recipe.js"></script></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Now, I&rsquo;m sure that this guide is missing steps, and is probably wrong in some places. But I hope that it&rsquo;s valuable as a jumping off point for anyone who wants to do something similar. Let me know in the comments what you think, or what you used this guide to make!</p>
+
+<!-- Links -->
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/django/" rel="tag">django</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/ifttt/" rel="tag">ifttt</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/maker/" rel="tag">maker</a></li>
+	</ul>
+</div>
+
+	</article>
+	
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Aaron Crowder avatar" src="http://www.gravatar.com/avatar/9777c65c27d6a66948d6b1f2b0379392.jpg?s=512" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Aaron Crowder</span>
+	</div>
+	<div class="authorbox__description">
+		Husband, Father, Software Developer. In that order.
+	</div>
+</div>
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/post/raspberry-pi/torrent-machine-and-network-share/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Build a Torrent Machine and Network Share</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next col-1-2">
+		<a class="post-nav__link" href="/post/programming/tools/powershell-debugging-in-vscode/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">Debugging PowerShell in VSCode</p></a>
+	</div>
+</nav>
+
+	
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "aaroncrowder" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+</main>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/programming/tools/powershell-debugging-in-vscode/">Debugging PowerShell in VSCode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/programming/python/django/use-ifttt-to-trigger-events/">Use IFTTT Maker Channel to Trigger Events in a Django App</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/raspberry-pi/torrent-machine-and-network-share/">Build a Torrent Machine and Network Share</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/raspberry-pi/raspberry-pi-zero-giveaway/">Raspberry Pi Zero Giveaway: Review</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/site-updates/new-theme/">New Theme!</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/personal/life/resolutions-2016/">Resolutions for 2016</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/personal/life/hour-of-code/">Hour of Code</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/programming/css/using-vh-with-calc-in-css/">Using vh with calc In CSS</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/programming/javascript/managing-scope-using-call-apply-and-bind/">Managing Scope Using Call, Apply, and Bind</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/programming/anatomy-of-a-commit-message/">Anatomy of a Commit Message</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/css">Css</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/javascript">Javascript</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/life">Life</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/programming">Programming</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/raspberry-pi">Raspberry-Pi</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/site-updates">Site-Updates</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/utils">Utils</a></li>
+		</ul>
+	</div>
+</div>
+	
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/christmas" title="christmas">christmas</a>
+		<a class="widget__link widget__link--taglist" href="/tags/css" title="css">css</a>
+		<a class="widget__link widget__link--taglist" href="/tags/debugging" title="debugging">debugging</a>
+		<a class="widget__link widget__link--taglist" href="/tags/design" title="design">design</a>
+		<a class="widget__link widget__link--taglist" href="/tags/django" title="django">django</a>
+		<a class="widget__link widget__link--taglist" href="/tags/front-end" title="front-end">front-end</a>
+		<a class="widget__link widget__link--taglist" href="/tags/git" title="git">git</a>
+		<a class="widget__link widget__link--taglist" href="/tags/giveaway" title="giveaway">giveaway</a>
+		<a class="widget__link widget__link--taglist" href="/tags/goals" title="goals">goals</a>
+		<a class="widget__link widget__link--taglist" href="/tags/hour-of-code" title="hour-of-code">hour-of-code</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ifttt" title="ifttt">ifttt</a>
+		<a class="widget__link widget__link--taglist" href="/tags/javascript" title="javascript">javascript</a>
+		<a class="widget__link widget__link--taglist" href="/tags/maker" title="maker">maker</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pelican" title="pelican">pelican</a>
+		<a class="widget__link widget__link--taglist" href="/tags/personal" title="personal">personal</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powershell" title="powershell">powershell</a>
+		<a class="widget__link widget__link--taglist" href="/tags/professional" title="professional">professional</a>
+		<a class="widget__link widget__link--taglist" href="/tags/programming" title="programming">programming</a>
+		<a class="widget__link widget__link--taglist" href="/tags/projects" title="projects">projects</a>
+		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python</a>
+		<a class="widget__link widget__link--taglist" href="/tags/raspberry-pi" title="raspberry-pi">raspberry-pi</a>
+		<a class="widget__link widget__link--taglist" href="/tags/resolutions" title="resolutions">resolutions</a>
+		<a class="widget__link widget__link--taglist" href="/tags/scripting" title="scripting">scripting</a>
+		<a class="widget__link widget__link--taglist" href="/tags/teaching" title="teaching">teaching</a>
+		<a class="widget__link widget__link--taglist" href="/tags/tips" title="tips">tips</a>
+		<a class="widget__link widget__link--taglist" href="/tags/torrent" title="torrent">torrent</a>
+		<a class="widget__link widget__link--taglist" href="/tags/update" title="update">update</a>
+		<a class="widget__link widget__link--taglist" href="/tags/volunteer" title="volunteer">volunteer</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vscode" title="vscode">vscode</a>
+		<a class="widget__link widget__link--taglist" href="/tags/zero" title="zero">zero</a>
+	</div>
+</div>
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 CrowderSoup. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

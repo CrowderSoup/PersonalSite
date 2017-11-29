@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi on CrowderSoup</title>
+    <link>https://crowdersoup.com/categories/raspberry-pi/</link>
+    <description>Recent content in Raspberry Pi on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Jan 2016 13:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build a Torrent Machine and Network Share</title>
+      <link>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</link>
+      <pubDate>Thu, 21 Jan 2016 13:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</guid>
+      <description>When I first got a Raspberry Pi the first thing I wanted to build was a home server. I wanted to have a central place at home to store files. I also thought it would be nice to have a torrent machine to handle downloading whatever I wanted. This past weekend I was finally able to get around to building it with a Raspberry Pi 2.
+I chose to use Diet Pi as my OS.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Zero Giveaway: Review</title>
+      <link>https://crowdersoup.com/post/raspberry-pi/raspberry-pi-zero-giveaway/</link>
+      <pubDate>Wed, 13 Jan 2016 09:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/raspberry-pi/raspberry-pi-zero-giveaway/</guid>
+      <description>I&amp;rsquo;ve been watching my local Barnes &amp;amp; Nobel&amp;rsquo;s like a hawk the past few weeks. In case you&amp;rsquo;ve been living under a rock, the official Raspberry Pi magazine, MagPi, shipped with the new Raspberry Pi Zero attached to the cover.
+The Raspberry Pi Zero, announced in late November of 2015, has been flying off shelves as fast as it&amp;rsquo;s stocked. They&amp;rsquo;re HARD to get your hands on. I should know, I&amp;rsquo;ve been trying since they were first announced!</description>
+    </item>
+    
+  </channel>
+</rss>
