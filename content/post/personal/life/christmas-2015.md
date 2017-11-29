@@ -1,6 +1,7 @@
 +++
 title = "Christmas of 2015"
-date = ""
+date = "2015-12-27 13:20:00"
+googleAnalytics = ""
 tags = [
     "christmas",
     "raspberry pi",

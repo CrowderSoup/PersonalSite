@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on CrowderSoup</title>
+    <link>https://crowdersoup.com/post/</link>
+    <description>Recent content in Posts on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Apr 2016 09:54:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debugging PowerShell in VSCode</title>
+      <link>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</link>
+      <pubDate>Tue, 26 Apr 2016 09:54:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</guid>
+      <description>Yesterday I learned a neat trick with Visual Studio Code when working on some PowerShell scripts to help orchestrate build and deployment of our projects (more on that in a different post). I knew that VSCode had a debugger, but I didn&amp;rsquo;t realize that a debugger for PowerShell had been added via an extension.
+I had installed this extension some time ago to help with writing PowerShell scripts in VSCode, but I was running my PowerShell prompt in another window to actually test them.</description>
+    </item>
+    
+    <item>
+      <title>Use IFTTT Maker Channel to Trigger Events in a Django App</title>
+      <link>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</link>
+      <pubDate>Fri, 08 Apr 2016 07:15:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</guid>
+      <description>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using IFTTT and a custom web app. For this project I went with Django to build my app out. I&amp;rsquo;d never used it before so I wanted a chance to play with it.</description>
+    </item>
+    
+    <item>
+      <title>Build a Torrent Machine and Network Share</title>
+      <link>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</link>
+      <pubDate>Thu, 21 Jan 2016 13:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</guid>
+      <description>When I first got a Raspberry Pi the first thing I wanted to build was a home server. I wanted to have a central place at home to store files. I also thought it would be nice to have a torrent machine to handle downloading whatever I wanted. This past weekend I was finally able to get around to building it with a Raspberry Pi 2.
+I chose to use Diet Pi as my OS.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Zero Giveaway: Review</title>
+      <link>https://crowdersoup.com/post/raspberry-pi/raspberry-pi-zero-giveaway/</link>
+      <pubDate>Wed, 13 Jan 2016 09:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/raspberry-pi/raspberry-pi-zero-giveaway/</guid>
+      <description>I&amp;rsquo;ve been watching my local Barnes &amp;amp; Nobel&amp;rsquo;s like a hawk the past few weeks. In case you&amp;rsquo;ve been living under a rock, the official Raspberry Pi magazine, MagPi, shipped with the new Raspberry Pi Zero attached to the cover.
+The Raspberry Pi Zero, announced in late November of 2015, has been flying off shelves as fast as it&amp;rsquo;s stocked. They&amp;rsquo;re HARD to get your hands on. I should know, I&amp;rsquo;ve been trying since they were first announced!</description>
+    </item>
+    
+    <item>
+      <title>New Theme!</title>
+      <link>https://crowdersoup.com/post/site-updates/new-theme/</link>
+      <pubDate>Wed, 06 Jan 2016 16:30:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/site-updates/new-theme/</guid>
+      <description>I recently started using Pelican static site generator for this blog. I was drawn to it for a few reasons:
+ It uses Jinja2 for templates, which I love. It written in python It reminds me a lot of Flask (this might be because of using Jinja2&amp;hellip;)  I&amp;rsquo;ve done a few interesting things with this site though. I&amp;rsquo;m hosting the repo that contains the source content, configuration, etc. on Gitlab.</description>
+    </item>
+    
+    <item>
+      <title>Resolutions for 2016</title>
+      <link>https://crowdersoup.com/post/personal/life/resolutions-2016/</link>
+      <pubDate>Sat, 02 Jan 2016 06:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/resolutions-2016/</guid>
+      <description>It seems like the &amp;ldquo;thing to do&amp;rdquo; at the beginning of each new year is to make New Years Resolutions. If you&amp;rsquo;re at all into blogging then you know that you then have to publish those resolutions for all the people who don&amp;rsquo;t read your blog to see. That&amp;rsquo;s who/what this post is for.
+I wanted to make my resolutions less about &amp;ldquo;I want to lose weight&amp;rdquo;, and more focused on programming, open source, and this blog.</description>
+    </item>
+    
+    <item>
+      <title>Christmas of 2015</title>
+      <link>https://crowdersoup.com/post/personal/life/christmas-2015/</link>
+      <pubDate>Sun, 27 Dec 2015 13:20:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/christmas-2015/</guid>
+      <description>This year&amp;rsquo;s Christmas was one for the books. As a father it was SO much fun to watch my two girls have the time of their little lives getting and playing with all their new toys. Their excitement and wonderment meant the world to me, even if I know they don&amp;rsquo;t fully understand everything.
+Before we went down, we had the girls get their Christmas Jamies on!
+When we went downstairs there wasn&amp;rsquo;t much ceremony to it at all.</description>
+    </item>
+    
+    <item>
+      <title>Hour of Code</title>
+      <link>https://crowdersoup.com/post/personal/life/hour-of-code/</link>
+      <pubDate>Thu, 10 Dec 2015 11:35:26 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/hour-of-code/</guid>
+      <description>Yesterday I took part in the Hour of Code at my local high school as a volunteer.In fact, it was at the high school that I attended. I had a lot of fun and I was excited to see the stundents gain a deeper understanding of code.
+I was especially impressed with the number of young women in the class that seemed to really enjoy it. It&amp;rsquo;s a really common misunderstanding that people hold that girls aren&amp;rsquo;t interested in tech.</description>
+    </item>
+    
+    <item>
+      <title>Using vh with calc In CSS</title>
+      <link>https://crowdersoup.com/post/programming/css/using-vh-with-calc-in-css/</link>
+      <pubDate>Tue, 17 Nov 2015 09:45:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/css/using-vh-with-calc-in-css/</guid>
+      <description>I often have need to build layout&amp;rsquo;s that vary depending on the content put in them. I can&amp;rsquo;t always count on that content being the same (cough CMSs cough). It&amp;rsquo;s just one of those things you have to do.
+One thing I&amp;rsquo;m having to do a lot though, is making the body of a page take up a certain amount of space so that the footer doesn&amp;rsquo;t look weird. In the past I&amp;rsquo;ve used JavaScript to make the footer take up the remaining space on the page if the content didn&amp;rsquo;t take up enough.</description>
+    </item>
+    
+    <item>
+      <title>Managing Scope Using Call, Apply, and Bind</title>
+      <link>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</link>
+      <pubDate>Mon, 16 Nov 2015 13:20:08 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</guid>
+      <description>Call Calls a function, with the specified arguments passed in
+The first argument becomes this, the rest are passed in as regular arguments. Using call allows you to maintain the scope of this accross methods. It works like this:
+ Here we&amp;rsquo;re using prototypical inheritance to allow us to inheirit properties from Animal in Dog and Cat. Using call allows us to invoke Animal to initialize it&amp;rsquo;s properties while maintaining the correct scope.</description>
+    </item>
+    
+    <item>
+      <title>Anatomy of a Commit Message</title>
+      <link>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</link>
+      <pubDate>Fri, 13 Nov 2015 07:15:33 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</guid>
+      <description>1. Subject Line The Subject Line is the first line of your commit message. Often the subject alone is enough, but if it&amp;rsquo;s not and you need a body be sure to separate the subject and body with a blank line.
+ First line of a commit message Often the only part you&amp;rsquo;ll need Separated from the body by a blank line Soft limit of 50 characters, hard limit of 69  Github&amp;rsquo;s interface truncates the subject line at 69 characters  Capitalize!</description>
+    </item>
+    
+    <item>
+      <title>JavaScript: Array&#39;s with named Properties</title>
+      <link>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</link>
+      <pubDate>Wed, 11 Nov 2015 12:46:49 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</guid>
+      <description>Adding named properties to arrays in JavaScript can be handy in a few different cases. For instance:
+ You need a nice formatted title / description for a data set. Rather than having multiple objects you can use named properties and get away with only using one. You want to add some functions to an array for whatever reason Lots of other reasons that I can&amp;rsquo;t think of right now!  Basically, this just buys you a nice way to encapsulate all the data you might need, without having to use an object with a nested array, or multiple objects.</description>
+    </item>
+    
+    <item>
+      <title>Powershell Markdown Preview</title>
+      <link>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</link>
+      <pubDate>Wed, 28 Oct 2015 00:09:20 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</guid>
+      <description>I&amp;rsquo;m at Angle Brackets. I&amp;rsquo;ve decided that I wanted to try taking all my notes in vim. I LOVE using vim. It&amp;rsquo;s a really awesome, powerful, and extendable command-line editor. I enjoy that it&amp;rsquo;s really distraction free. Being distracted is something that I struggle with so I really look for ways to stay focused.
+I write in Markdown as well. It&amp;rsquo;s a great way to get a simple, clean, well formatted plain text document that can be processed and produce HTML.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Life on CrowderSoup</title>
+    <link>https://crowdersoup.com/categories/life/</link>
+    <description>Recent content in Life on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Jan 2016 06:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resolutions for 2016</title>
+      <link>https://crowdersoup.com/post/personal/life/resolutions-2016/</link>
+      <pubDate>Sat, 02 Jan 2016 06:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/resolutions-2016/</guid>
+      <description>It seems like the &amp;ldquo;thing to do&amp;rdquo; at the beginning of each new year is to make New Years Resolutions. If you&amp;rsquo;re at all into blogging then you know that you then have to publish those resolutions for all the people who don&amp;rsquo;t read your blog to see. That&amp;rsquo;s who/what this post is for.
+I wanted to make my resolutions less about &amp;ldquo;I want to lose weight&amp;rdquo;, and more focused on programming, open source, and this blog.</description>
+    </item>
+    
+    <item>
+      <title>Christmas of 2015</title>
+      <link>https://crowdersoup.com/post/personal/life/christmas-2015/</link>
+      <pubDate>Sun, 27 Dec 2015 13:20:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/christmas-2015/</guid>
+      <description>This year&amp;rsquo;s Christmas was one for the books. As a father it was SO much fun to watch my two girls have the time of their little lives getting and playing with all their new toys. Their excitement and wonderment meant the world to me, even if I know they don&amp;rsquo;t fully understand everything.
+Before we went down, we had the girls get their Christmas Jamies on!
+When we went downstairs there wasn&amp;rsquo;t much ceremony to it at all.</description>
+    </item>
+    
+    <item>
+      <title>Hour of Code</title>
+      <link>https://crowdersoup.com/post/personal/life/hour-of-code/</link>
+      <pubDate>Thu, 10 Dec 2015 11:35:26 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/life/hour-of-code/</guid>
+      <description>Yesterday I took part in the Hour of Code at my local high school as a volunteer.In fact, it was at the high school that I attended. I had a lot of fun and I was excited to see the stundents gain a deeper understanding of code.
+I was especially impressed with the number of young women in the class that seemed to really enjoy it. It&amp;rsquo;s a really common misunderstanding that people hold that girls aren&amp;rsquo;t interested in tech.</description>
+    </item>
+    
+  </channel>
+</rss>

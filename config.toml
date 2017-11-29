@@ -5,6 +5,8 @@ languageCode = "en-us"
 disqusShortname = "aaroncrowder"
 googleAnalytics = ""
 
+publishDir = "docs"
+
 [Author]
     name = "Aaron Crowder"
     bio = "Husband, Father, Software Developer. In that order."
