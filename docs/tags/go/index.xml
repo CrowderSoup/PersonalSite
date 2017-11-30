@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on CrowderSoup</title>
-    <link>https://crowdersoup.com/tags/python/</link>
-    <description>Recent content in Python on CrowderSoup</description>
+    <title>Go on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/go/</link>
+    <description>Recent content in Go on CrowderSoup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Nov 2017 23:41:08 +0000</lastBuildDate>
     
-	<atom:link href="https://crowdersoup.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://crowdersoup.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://crowdersoup.com/post/site-updates/hugo/</guid>
       <description>Last night I got the wild hare to migrate my personal site from Pelican to Hugo. I&amp;rsquo;ve been meaning to do it for a while now, so to give myself the push I needed to get it done I deleted my old personal site from Github.
 Differences Front Matter Honestly the biggest different for content is &amp;ldquo;front matter&amp;rdquo;. Both Hugo and Pelican, as static site generators, use front matter to describe pieces of content.</description>
-    </item>
-    
-    <item>
-      <title>Use IFTTT Maker Channel to Trigger Events in a Django App</title>
-      <link>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</link>
-      <pubDate>Fri, 08 Apr 2016 07:15:00 +0000</pubDate>
-      
-      <guid>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</guid>
-      <description>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using IFTTT and a custom web app. For this project I went with Django to build my app out. I&amp;rsquo;d never used it before so I wanted a chance to play with it.</description>
     </item>
     
   </channel>

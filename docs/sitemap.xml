@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://crowdersoup.com/post/site-updates/hugo/</loc>
+    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://crowdersoup.com/about/</loc>
     <lastmod>2017-11-29T00:00:00+00:00</lastmod>
   </url>
@@ -85,7 +90,7 @@
   
   <url>
     <loc>https://crowdersoup.com/</loc>
-    <lastmod>2017-11-29T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -138,6 +143,12 @@
   </url>
   
   <url>
+    <loc>https://crowdersoup.com/tags/go/</loc>
+    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://crowdersoup.com/tags/goals/</loc>
     <lastmod>2016-01-02T06:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -146,6 +157,12 @@
   <url>
     <loc>https://crowdersoup.com/tags/hour-of-code/</loc>
     <lastmod>2015-12-10T11:35:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/hugo/</loc>
+    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -181,7 +198,7 @@
   
   <url>
     <loc>https://crowdersoup.com/tags/pelican/</loc>
-    <lastmod>2016-01-06T16:30:00+00:00</lastmod>
+    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -193,7 +210,7 @@
   
   <url>
     <loc>https://crowdersoup.com/post/</loc>
-    <lastmod>2016-04-26T09:54:00+00:00</lastmod>
+    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -229,7 +246,7 @@
   
   <url>
     <loc>https://crowdersoup.com/tags/python/</loc>
-    <lastmod>2016-04-08T07:15:00+00:00</lastmod>
+    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -259,7 +276,7 @@
   
   <url>
     <loc>https://crowdersoup.com/categories/site-updates/</loc>
-    <lastmod>2016-01-06T16:30:00+00:00</lastmod>
+    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
     <priority>0</priority>
   </url>
   

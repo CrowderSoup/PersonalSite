@@ -6,10 +6,20 @@
     <description>Recent content in Posts on CrowderSoup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Apr 2016 09:54:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2017 23:41:08 +0000</lastBuildDate>
     
 	<atom:link href="https://crowdersoup.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Moving to Hugo</title>
+      <link>https://crowdersoup.com/post/site-updates/hugo/</link>
+      <pubDate>Wed, 29 Nov 2017 23:41:08 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/site-updates/hugo/</guid>
+      <description>Last night I got the wild hare to migrate my personal site from Pelican to Hugo. I&amp;rsquo;ve been meaning to do it for a while now, so to give myself the push I needed to get it done I deleted my old personal site from Github.
+Differences Front Matter Honestly the biggest different for content is &amp;ldquo;front matter&amp;rdquo;. Both Hugo and Pelican, as static site generators, use front matter to describe pieces of content.</description>
+    </item>
     
     <item>
       <title>Debugging PowerShell in VSCode</title>
