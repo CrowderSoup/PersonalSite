@@ -6,10 +6,20 @@
     <description>Recent content in Site Updates on CrowderSoup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Nov 2017 23:41:08 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 May 2018 11:45:00 +0000</lastBuildDate>
     
 	<atom:link href="https://crowdersoup.com/categories/site-updates/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Keybase Proof</title>
+      <link>https://crowdersoup.com/post/site-updates/keybase/</link>
+      <pubDate>Tue, 01 May 2018 11:45:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/site-updates/keybase/</guid>
+      <description>I&amp;rsquo;ve added my Keybase Proof as a text file at the root of this site. I used to have my site proven via DNS but for whatever reason CloudFlare removed my TXT record breaking the proof. I decided that having the .txt file proof was more resilient because even if I change hosting (Currently on Github Pages) my proof will remain intact.
+If you aren&amp;rsquo;t on Keybase check it out. I like to think of it as &amp;ldquo;crypto-as-a-service&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>Moving to Hugo</title>

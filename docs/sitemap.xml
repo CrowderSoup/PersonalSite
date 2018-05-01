@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://crowdersoup.com/post/site-updates/keybase/</loc>
+    <lastmod>2018-05-01T11:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://crowdersoup.com/post/site-updates/hugo/</loc>
     <lastmod>2017-11-29T23:41:08+00:00</lastmod>
   </url>
@@ -90,7 +95,13 @@
   
   <url>
     <loc>https://crowdersoup.com/</loc>
-    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
+    <lastmod>2018-05-01T11:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crowdersoup.com/tags/crypto/</loc>
+    <lastmod>2018-05-01T11:45:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -210,7 +221,7 @@
   
   <url>
     <loc>https://crowdersoup.com/post/</loc>
-    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
+    <lastmod>2018-05-01T11:45:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -275,8 +286,14 @@
   </url>
   
   <url>
+    <loc>https://crowdersoup.com/tags/security/</loc>
+    <lastmod>2018-05-01T11:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://crowdersoup.com/categories/site-updates/</loc>
-    <lastmod>2017-11-29T23:41:08+00:00</lastmod>
+    <lastmod>2018-05-01T11:45:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
