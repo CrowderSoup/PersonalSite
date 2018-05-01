@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/crowdersoup
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://crowdersoup.com
+  * I am crowdersoup (https://keybase.io/crowdersoup) on keybase.
+  * I have a public key ASDHrYxLKGJe55Oi_IitUQRBx97iLTAtAEzNLrqfJVCeKQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01015d96aaeaf82f29e40ed595132965f41b7f44e655add17905590217998959778c0a",
+      "host": "keybase.io",
+      "kid": "0120c7ad8c4b28625ee793a2fc88ad510441c7dee22d302d004ccd2eba9f25509e290a",
+      "uid": "bebe25488fc0e9fd60a1a0447a991419",
+      "username": "crowdersoup"
+    },
+    "merkle_root": {
+      "ctime": 1525195667,
+      "hash": "4112ab58816754603316aebe9477e250edcdc763d49cf13078bed07e64fc0d257380c37af28d51a86cfa5625de008506370f2bb1ce1b42d22fc316c3c81d5d54",
+      "hash_meta": "4ddd835af15d58d2bfe7438346ab33b06a92e3763c78a37e7fd2737285d28e30",
+      "seqno": 2466144
+    },
+    "service": {
+      "entropy": "8/jmgITQGEJQ/9lXebJYHLOh",
+      "hostname": "crowdersoup.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.47"
+  },
+  "ctime": 1525195689,
+  "expire_in": 504576000,
+  "prev": "aede33ef61c34f891add650e77c2a79253df929914e92757b635db974ecc96dd",
+  "seqno": 126,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgx62MSyhiXueTovyIrVEEQcfe4i0wLQBMzS66nyVQnikKp3BheWxvYWTESpcCfsQgrt4z72HDT4ka3WUOd8KnklPfkpkU6SdXtjXbl07Mlt3EIC/yy4uQ+BBi0KAtTJFUJaka1/lfGDLm6dWrGP7XjXd9AgHCo3NpZ8RAtT/Djmgz/HHCBRtAjO5S1i62w4g/RgjgxoSODPL3K/Y0HiqVhPDpIqf090X+qX2VrrSQsxxsfhX8mh+aiLcYBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIC7/Us6X5dDgFtrrJlWhaQS4If0FSZJPVoF3SiEQy/Gko3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/crowdersoup
+
+==================================================================
