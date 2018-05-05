@@ -20,7 +20,7 @@ hosting using it couldn't be easier.
 All you have to do is [set up your custom domain][2] to point to your GitHub pages
 site, and then update the settings on your repo to look like mine:
 
-![GitHub Pages Settings](/assets/uploads/2018/05/GitHubPagesHTTPSConfig.png)
+![GitHub Pages Settings]({{< baseurl >}}assets/uploads/2018/05/GitHubPagesHTTPSConfig.png)
 
 If, like me, you're already using a custom domain on GitHub pages then you have
 to follow these simple steps to enable HTTPS:

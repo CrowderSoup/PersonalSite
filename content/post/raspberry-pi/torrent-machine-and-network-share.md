@@ -31,16 +31,16 @@ Then I made sure my SD card was clean and ready to flash. I like to use the
 Windows CLI tool `diskpart`. You can see pretty simply the steps I took from the
 image below:
 
-![Cleaning my SD Card](/assets/uploads/2016/01/clean_disk_windows_powershell.png)
+![Cleaning my SD Card]({{< baseurl >}}assets/uploads/2016/01/clean_disk_windows_powershell.png)
 
 Once my SD Card was clean, I formatted it:
 
-![Formatting my SD Card](/assets/uploads/2016/01/new_simple_volume_disk_management.png)
+![Formatting my SD Card]({{< baseurl >}}assets/uploads/2016/01/new_simple_volume_disk_management.png)
 
 It doesn't matter what format you use because you're going to reformat it when
 you write the image to the SD card (I use [Win32DiskImager](3)):
 
-![Write Image to SD Card](/assets/uploads/2016/01/write_img.png)
+![Write Image to SD Card]({{< baseurl >}}assets/uploads/2016/01/write_img.png)
 
 ### Notes
 

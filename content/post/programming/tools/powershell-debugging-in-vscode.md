@@ -28,10 +28,10 @@ just have to open a PowerShell script, hit `F5` and away you go!
 Here's the steps:
 
 ### 1. Open the Debug Tab
-![Debug Tab](/assets/uploads/2016/04/vscode_debug_tab.png)
+![Debug Tab]({{< baseurl >}}assets/uploads/2016/04/vscode_debug_tab.png)
 
 ### 2. Click the gear and select "PowerShell" from the dropdown
-![Select PowerShell](/assets/uploads/2016/04/vscode_debug_select_powershell.png)
+![Select PowerShell]({{< baseurl >}}assets/uploads/2016/04/vscode_debug_select_powershell.png)
 
 VSCode has been awesome to work with (I'm using it to write this post!). Having
 a built in debugger with a light-weight and extensible text editor has been
@@ -40,7 +40,7 @@ the left of the line number (just like in any good debugging tool). Here's what
 it looks like when you are actually debugging (this is actually my PowerShell
 profile):
 
-![Debugging](/assets/uploads/2016/04/vscode_debugging.png)
+![Debugging]({{< baseurl >}}assets/uploads/2016/04/vscode_debugging.png)
 
 What other cool things do you love about VSCode?
 

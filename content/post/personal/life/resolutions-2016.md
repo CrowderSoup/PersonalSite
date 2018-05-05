@@ -18,7 +18,7 @@ blog to see. That's who/what this post is for.
 I wanted to make my resolutions less about "I want to lose weight", and more
 focused on programming, open source, and this blog.
 
-![Don't let your dreams be dreams](/assets/uploads/2016/01/shia.jpg)
+![Don't let your dreams be dreams]({{< baseurl >}}assets/uploads/2016/01/shia.jpg)
 <small>Some motivation from shia</small>
 
 ### 1. Blog (at least) Weekly

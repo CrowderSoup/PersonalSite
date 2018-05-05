@@ -17,7 +17,7 @@ if I know they don't fully understand everything.
 
 Before we went down, we had the girls get their Christmas Jamies on!
 
-![Evelyn and Ruby in Christmas Jamies](/assets/uploads/2015/12/27/EvelynAndRuby-ChristmasJamies.jpg)
+![Evelyn and Ruby in Christmas Jamies]({{< baseurl >}}assets/uploads/2015/12/27/EvelynAndRuby-ChristmasJamies.jpg)
 
 When we went downstairs there wasn't much ceremony to it at all. No one "played
 Santa" as Ralphie and Randy would say. I mean, Evelyn (our oldest) is just
@@ -28,7 +28,7 @@ Birthday.
 
 **Ruby**
 <div class="img-container">
-![Ruby playing with her new toys](/assets/uploads/2015/12/27/Ruby-Presents.jpg)
+![Ruby playing with her new toys]({{< baseurl >}}assets/uploads/2015/12/27/Ruby-Presents.jpg)
 <small>
     Ruby loved her play table. She can stand and make lots and lots of noise!
 </small>
@@ -36,12 +36,12 @@ Birthday.
 
 **Evelyn**
 <div class="img-container">
-![Evelyn Opening a present](/assets/uploads/2015/12/27/EvelynOpeningPresent.jpg)
+![Evelyn Opening a present]({{< baseurl >}}assets/uploads/2015/12/27/EvelynOpeningPresent.jpg)
 <small>
     Evelyn was shy about opening presents at first, but really got into it as
     the morning wore on.
 </small>
-![Evelyn playing with her train set](/assets/uploads/2015/12/27/EvelynTrains.jpg)
+![Evelyn playing with her train set]({{< baseurl >}}assets/uploads/2015/12/27/EvelynTrains.jpg)
 <small>
     Probably her favorite present: A train set!
 </small>
@@ -60,7 +60,7 @@ will tell if we can do it again next year!
 
 P.S. Due to my own presents there will be a lot of Raspberry Pi posts coming...
 
-![Raspberry Pi with 2.8 inch TFT display](/assets/uploads/RaspberryPi2-2.8-TFT-Adafruit.jpg)
+![Raspberry Pi with 2.8 inch TFT display]({{< baseurl >}}assets/uploads/RaspberryPi2-2.8-TFT-Adafruit.jpg)
 
 <div class="img-container">
 
