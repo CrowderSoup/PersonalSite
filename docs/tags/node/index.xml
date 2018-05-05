@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/node/</link>
+    <description>Recent content in Node on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 May 2018 16:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/node/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Husky to Build Hugo Site</title>
+      <link>https://crowdersoup.com/post/site-updates/husky/</link>
+      <pubDate>Sat, 05 May 2018 16:30:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/site-updates/husky/</guid>
+      <description>I&amp;rsquo;ve been making some efforts to streamline the publishing process for this site. I&amp;rsquo;ve read about tools like Netlify and Lektor, but I wanted to keep things as close to a basic Hugo site as possible.
+To that end, I wanted to use git hooks to run hugo whenever I ran git commit. That way to publish a new post I simply had to write it in markdown, save, commit and push.</description>
+    </item>
+    
+  </channel>
+</rss>

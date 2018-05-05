@@ -1,0 +1,38 @@
+{
+  "name": "personalsite",
+  "version": "1.0.0",
+  "description": "My personal site, built with hugo",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "hugo",
+    "dev": "hugo server"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && git add docs/*"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrowderSoup/PersonalSite.git"
+  },
+  "keywords": [
+    "hugo",
+    "go",
+    "static",
+    "personal",
+    "site"
+  ],
+  "author": "Aaron Crowder <aaron.crowder@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrowderSoup/PersonalSite/issues"
+  },
+  "homepage": "https://github.com/CrowderSoup/PersonalSite#readme",
+  "devDependencies": {
+    "husky": "^1.0.0-rc.2"
+  }
+}
