@@ -10,7 +10,7 @@ publishDir = "docs"
 [Author]
     name = "Aaron Crowder"
     bio = "Husband, Father, Software Developer. In that order."
-    avatar = "http://www.gravatar.com/avatar/9777c65c27d6a66948d6b1f2b0379392.jpg?s=512"
+    avatar = "https://www.gravatar.com/avatar/9777c65c27d6a66948d6b1f2b0379392.jpg?s=512"
 
 
 [Params]
