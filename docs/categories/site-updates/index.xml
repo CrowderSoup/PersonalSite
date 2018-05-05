@@ -6,10 +6,20 @@
     <description>Recent content in Site Updates on CrowderSoup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 May 2018 11:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 May 2018 11:45:00 +0000</lastBuildDate>
     
 	<atom:link href="https://crowdersoup.com/categories/site-updates/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GitHub Pages Over HTTPS</title>
+      <link>https://crowdersoup.com/post/site-updates/https/</link>
+      <pubDate>Sat, 05 May 2018 11:45:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/site-updates/https/</guid>
+      <description>Using HTTPS for your site has lots of benefits. Chief among them being security. Using HTTPS ensures that no one can intercept and read traffic between you and the site you&amp;rsquo;re visiting.
+However, it&amp;rsquo;s traditionally been somewhat difficult and expensive to provide HTTPS for your sites visitors. Now though, with Let&amp;rsquo;s Encrypt an SSL certificate is free! And if you&amp;rsquo;re using GitHub pages with a custom domain for hosting using it couldn&amp;rsquo;t be easier.</description>
+    </item>
     
     <item>
       <title>Keybase Proof</title>
