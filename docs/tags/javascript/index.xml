@@ -5,7 +5,8 @@
     <link>https://crowdersoup.com/tags/javascript/</link>
     <description>Recent content in Javascript on CrowderSoup</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/CrowderSoup&#34;&gt;Aaron Crowder&lt;/a&gt; 2018</copyright>
     <lastBuildDate>Mon, 16 Nov 2015 13:20:08 +0000</lastBuildDate>
     
 	<atom:link href="https://crowdersoup.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />

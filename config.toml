@@ -1,32 +1,43 @@
 baseurl = "https://crowdersoup.com/"
+languageCode = "en"
 title = "CrowderSoup"
-theme = "mainroad"
-languageCode = "en-us"
+theme = "kiss"
+copyright = "&copy; <a href=\"https://github.com/CrowderSoup\">Aaron Crowder</a> 2018"
 disqusShortname = "aaroncrowder"
 googleAnalytics = ""
+# Number of posts per page
+Paginate = 5
+enableRobotsTXT = true
 
 publishDir = "docs"
 
-[Author]
-    name = "Aaron Crowder"
-    bio = "Husband, Father, Software Developer. In that order."
-    avatar = "https://www.gravatar.com/avatar/9777c65c27d6a66948d6b1f2b0379392.jpg?s=512"
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.rss]
+includeContent = true # Includes whole content in rss
+authorName = "Aaron Crowder" # Site author's full name
+authorEmail = "aaron.crowder@gmail.com"
+
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = false # Adds OpenGraph and Twitter cards
+homeTitle = "CrowderSoup" # Title for home page
+poweredby = true # Adds powered by Hugo and Kiss below Copyright section
+related = true # Includes related articles
 
 
-[Params]
-    subtitle = "It's late and I don't know what to put here..." # Subtitle of your site
-    description = "" # Description of your site
-    opengraph = true
-    readmore = false # Show "Read more" button in list if true
-    leftsidebar = false # Move sidebar to the left side if true
-    authorbox = true
-    post_navigation = true
-    postSections = ["post"]
+[params.social]
+twitter = "CrowderSoup"
+github = "CrowderSoup"
+email = "aaron.crowder@gmail.com"
 
+[params.social.config]
+platforms = ["twitter","github","email"]
 
-[Params.widgets]
-    search = false # Enable "Search" widget
-    recent_articles = true # Enable "Recent arcticles" widget
-    categories = true # Enable "Categories" widget
-    tags = true # Enable "Tags" widget
-    tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
+[taxonomies]
+tag ="tags"
+
+[blackfriday]
+hrefTargetBlank = true
+
