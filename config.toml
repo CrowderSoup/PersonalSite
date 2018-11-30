@@ -4,6 +4,9 @@ title = "CrowderSoup"
 theme = "basics-plus"
 disqusShortname = "aaroncrowder"
 
+# Ensure site is published to "docs" folder"
+publishDir = "docs"
+
 [params]
     author = "Aaron Crowder"
     github = "CrowderSoup"

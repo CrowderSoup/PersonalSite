@@ -4,1282 +4,192 @@
     <title>CrowderSoup</title>
     <link>https://crowdersoup.com/</link>
     <description>Recent content on CrowderSoup</description>
-    <generator>Hugo - gohugo.io</generator>
-    <language>en</language>
-    <contact>aaron.crowder@gmail.com</contact>
-    <copyright>&copy; <a href="https://github.com/CrowderSoup">Aaron Crowder</a> 2018</copyright>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 May 2018 16:30:00 +0000</lastBuildDate>
     
-        <atom:link href="https://crowdersoup.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://crowdersoup.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using Husky to Build Hugo Site</title>
       <link>https://crowdersoup.com/post/site-updates/husky/</link>
       <pubDate>Sat, 05 May 2018 16:30:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/site-updates/husky/</guid>
-      <description>Using Husky to ensure that hugo is run to generate site on commit</description>
-      
-      <content>&lt;p&gt;I&amp;rsquo;ve been making some efforts to streamline the publishing process for this
-site. I&amp;rsquo;ve read about tools like &lt;a href=&#34;https://www.netlifycms.org/&#34; target=&#34;_blank&#34;&gt;Netlify&lt;/a&gt; and &lt;a href=&#34;https://www.getlektor.com/&#34; target=&#34;_blank&#34;&gt;Lektor&lt;/a&gt;, but I wanted to
-keep things as close to a basic &lt;a href=&#34;http://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; site as possible.&lt;/p&gt;
-
-&lt;p&gt;To that end, I wanted to use git hooks to run hugo whenever I ran &lt;code&gt;git commit&lt;/code&gt;.
-That way to publish a new post I simply had to write it in markdown, save,
-commit and push. No remembering to run hugo. No remembering to add changes to
-the site. A plain and simple git workflow for publishing.&lt;/p&gt;
-
-&lt;p&gt;I have seen &lt;a href=&#34;https://github.com/typicode/husky&#34; target=&#34;_blank&#34;&gt;husky&lt;/a&gt; before and decided to give that a go for this project.
-It&amp;rsquo;s an npm package that allows you to define your git hooks in your
-&lt;code&gt;package.json&lt;/code&gt;, which will make it easy for me to maintain the hooks I want to
-use.&lt;/p&gt;
-
-&lt;p&gt;To get started I first had to initialize my &lt;code&gt;package.json&lt;/code&gt; file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm init
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then I installed husky:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install husky@next --save-dev
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And finally update my &lt;code&gt;package.json&lt;/code&gt; with the following scripts and husky
-config:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;: {
-  &amp;quot;build&amp;quot;: &amp;quot;hugo&amp;quot;,
-  &amp;quot;dev&amp;quot;: &amp;quot;hugo server&amp;quot;
-},
-&amp;quot;husky&amp;quot;: {
-  &amp;quot;hooks&amp;quot;: {
-    &amp;quot;pre-commit&amp;quot;: &amp;quot;npm run build &amp;amp;&amp;amp; git add docs/*&amp;quot;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now I can use npm to run the hugo server (not that that&amp;rsquo;s easier than &lt;code&gt;hugo
-server&lt;/code&gt;) and build the site. The real value though is that any time I commit
-the build will automatically run and the resulting build will be added before
-the commit.&lt;/p&gt;
-
-&lt;!--Links--&gt;
-</content>
-      
+      <description>I&amp;rsquo;ve been making some efforts to streamline the publishing process for this site. I&amp;rsquo;ve read about tools like Netlify and Lektor, but I wanted to keep things as close to a basic Hugo site as possible.
+To that end, I wanted to use git hooks to run hugo whenever I ran git commit. That way to publish a new post I simply had to write it in markdown, save, commit and push.</description>
     </item>
     
     <item>
       <title>GitHub Pages Over HTTPS</title>
       <link>https://crowdersoup.com/post/site-updates/https/</link>
       <pubDate>Sat, 05 May 2018 11:45:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/site-updates/https/</guid>
-      <description>Using HTTPS for sites with custom domains on GitHub Pages</description>
-      
-      <content>&lt;p&gt;Using HTTPS for your site has lots of benefits. Chief among them being
-security. Using HTTPS ensures that no one can intercept and read traffic
-between you and the site you&amp;rsquo;re visiting.&lt;/p&gt;
-
-&lt;p&gt;However, it&amp;rsquo;s traditionally been somewhat difficult and expensive to provide
-HTTPS for your sites visitors. Now though, with &lt;a href=&#34;https://letsencrypt.org/&#34; target=&#34;_blank&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt; an SSL
-certificate is free! And if you&amp;rsquo;re using GitHub pages with a custom domain for
-hosting using it couldn&amp;rsquo;t be easier.&lt;/p&gt;
-
-&lt;p&gt;All you have to do is &lt;a href=&#34;https://help.github.com/articles/setting-up-an-apex-domain/&#34; target=&#34;_blank&#34;&gt;set up your custom domain&lt;/a&gt; to point to your GitHub pages
-site, and then update the settings on your repo to look like mine:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2018/05/GitHubPagesHTTPSConfig.png&#34; alt=&#34;GitHub Pages Settings&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If, like me, you&amp;rsquo;re already using a custom domain on GitHub pages then you have
-to follow these simple steps to enable HTTPS:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Remove your custom domain and save&lt;/li&gt;
-&lt;li&gt;Re-add your custom domain and save again&lt;/li&gt;
-&lt;li&gt;The &amp;ldquo;Enforce HTTPS&amp;rdquo; checkbox should now be enabled&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Now you really don&amp;rsquo;t have an excuse to NOT be using HTTPS!&lt;/p&gt;
-
-&lt;!--Links--&gt;
-</content>
-      
+      <description>Using HTTPS for your site has lots of benefits. Chief among them being security. Using HTTPS ensures that no one can intercept and read traffic between you and the site you&amp;rsquo;re visiting.
+However, it&amp;rsquo;s traditionally been somewhat difficult and expensive to provide HTTPS for your sites visitors. Now though, with Let&amp;rsquo;s Encrypt an SSL certificate is free! And if you&amp;rsquo;re using GitHub pages with a custom domain for hosting using it couldn&amp;rsquo;t be easier.</description>
     </item>
     
     <item>
       <title>Keybase Proof</title>
       <link>https://crowdersoup.com/post/site-updates/keybase/</link>
       <pubDate>Tue, 01 May 2018 11:45:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/site-updates/keybase/</guid>
-      <description></description>
-      
-      <content>&lt;p&gt;I&amp;rsquo;ve added my &lt;a href=&#34;http://crowdersoup.com/keybase.txt&#34; target=&#34;_blank&#34;&gt;Keybase Proof&lt;/a&gt; as a text file at the root of this site.
-I used to have my site proven via DNS but for whatever reason CloudFlare
-removed my TXT record breaking the proof. I decided that having the .txt file
-proof was more resilient because even if I change hosting (Currently on Github
-Pages) my proof will remain intact.&lt;/p&gt;
-
-&lt;p&gt;If you aren&amp;rsquo;t on &lt;a href=&#34;https://keybase.io/&#34; target=&#34;_blank&#34;&gt;Keybase&lt;/a&gt; check it out. I like to think of it as
-&amp;ldquo;crypto-as-a-service&amp;rdquo;. They have the ability to share files or have chats (team
-or one-on-one) that are encrypted end-to-end.&lt;/p&gt;
-
-&lt;!--Links--&gt;
-</content>
-      
+      <description>I&amp;rsquo;ve added my Keybase Proof as a text file at the root of this site. I used to have my site proven via DNS but for whatever reason CloudFlare removed my TXT record breaking the proof. I decided that having the .txt file proof was more resilient because even if I change hosting (Currently on Github Pages) my proof will remain intact.
+If you aren&amp;rsquo;t on Keybase check it out. I like to think of it as &amp;ldquo;crypto-as-a-service&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Moving to Hugo</title>
       <link>https://crowdersoup.com/post/site-updates/hugo/</link>
       <pubDate>Wed, 29 Nov 2017 23:41:08 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/site-updates/hugo/</guid>
-      <description>an adventure moving from Pelican to Hugo</description>
-      
-      <content>
-
-&lt;p&gt;Last night I got the wild hare to migrate my personal site from &lt;a href=&#34;https://github.com/getpelican/pelican&#34; target=&#34;_blank&#34;&gt;Pelican&lt;/a&gt; to
-&lt;a href=&#34;https://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;. I&amp;rsquo;ve been meaning to do it for a while now, so to give myself the
-push I needed to get it done I &lt;em&gt;deleted&lt;/em&gt; my old personal site from &lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;differences&#34;&gt;Differences&lt;/h3&gt;
-
-&lt;h4 id=&#34;front-matter&#34;&gt;Front Matter&lt;/h4&gt;
-
-&lt;p&gt;Honestly the biggest different for content is &amp;ldquo;front matter&amp;rdquo;. Both Hugo and
-Pelican, as static site generators, use front matter to describe pieces of
-content.&lt;/p&gt;
-
-&lt;p&gt;Front matter for Pelican might look something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;Title: Blog Post Title
-Date: 2017-11-29 23:51:34
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Whereas Hugo&amp;rsquo;s would look like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;+++
-title = &amp;quot;Blog Post Title&amp;quot;
-date = &amp;quot;2017-11-29 23:51:34&amp;quot;
-+++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As you can see it&amp;rsquo;s pretty similar. I don&amp;rsquo;t have too many posts on my blog so
-it was easy to go through and manually update each one. If I had more posts
-I probably would have written a script to make the conversion for me.&lt;/p&gt;
-
-&lt;h4 id=&#34;fold-structure&#34;&gt;Fold Structure&lt;/h4&gt;
-
-&lt;p&gt;This likely doesn&amp;rsquo;t come as a surprise, but just as the front matter format
-isn&amp;rsquo;t compatible neither is the project fold structure. Pelican keeps everything
-you&amp;rsquo;re going to render under the &lt;code&gt;content&lt;/code&gt; folder. Under that content folder you
-have folders for posts, pages, and static content. Something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;- content
-    - posts
-        - welcome.md
-    - pages
-        - about.md
-    - assets
-        - style.css
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hugo likes to keep only real &lt;strong&gt;content&lt;/strong&gt; under the &lt;code&gt;content&lt;/code&gt; folder. Hugo also
-makes no assumptions about the TYPE of content your site will have. Each file
-represents a node in your site-map. How those nodes are rendered as your site
-is up to your theme!&lt;/p&gt;
-
-&lt;p&gt;Hugo does allow for static content though. It lives, simply, under the &lt;code&gt;static&lt;/code&gt;
-folder at the root of your site. For me, this meant copying not only the actual
-content from &lt;code&gt;content/posts&lt;/code&gt; and &lt;code&gt;content/pages&lt;/code&gt; just Hugo&amp;rsquo;s &lt;code&gt;content&lt;/code&gt; folder,
-but also moving &lt;code&gt;content/assets&lt;/code&gt; to &lt;code&gt;static&lt;/code&gt; in Hugo.&lt;/p&gt;
-
-&lt;h4 id=&#34;themes&#34;&gt;Themes&lt;/h4&gt;
-
-&lt;p&gt;One of the things that drew me to Hugo was how powerful a Hugo theme is. As
-I said before, a Hugo theme actually dictates the structure in which your
-content will be rendered. A theme can describe a set of default layouts for
-list pages, single pages, etc. It can also override the layout of any
-individual page.&lt;/p&gt;
-
-&lt;p&gt;Hugo themes can be as simple or verbose as you choose. Pelican themes require
-more files, and generally seemed less flexible to me. Though, this may have
-been due simply to my own implementation.&lt;/p&gt;
-
-&lt;h3 id=&#34;hugo-s-advantages&#34;&gt;Hugo&amp;rsquo;s advantages&lt;/h3&gt;
-
-&lt;h4 id=&#34;speed&#34;&gt;Speed&lt;/h4&gt;
-
-&lt;p&gt;Purely anecdotal, but Hugo feels &lt;strong&gt;much&lt;/strong&gt; faster than Pelican. This site (while
-small) builds in less than 20ms. It&amp;rsquo;s not so much that Pelican was &lt;strong&gt;slow&lt;/strong&gt;,
-it&amp;rsquo;s just that Hugo is &lt;strong&gt;so&lt;/strong&gt; much faster.&lt;/p&gt;
-
-&lt;h4 id=&#34;flexibility&#34;&gt;Flexibility&lt;/h4&gt;
-
-&lt;p&gt;Hugo has baked in i18n support. It has support for building multiple content
-types (JSON, AMP, etc.). It supports whatever taxonomies, content types, and
-menus you can dream up. A number of shortcodes are baked in and ready to use in
-your markdown, and you can write as many custom ones as you want.&lt;/p&gt;
-
-&lt;p&gt;Bottom line, I&amp;rsquo;ve found Hugo to be far more flexible than Pelican.&lt;/p&gt;
-
-&lt;h3 id=&#34;other-non-hugo-vs-pelican-changes&#34;&gt;Other Non Hugo Vs Pelican Changes&lt;/h3&gt;
-
-&lt;p&gt;One of the biggest changes I&amp;rsquo;ve made to this site is that it&amp;rsquo;s now run out of
-a single git repository hosted on &lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;. Github now let&amp;rsquo;s you host
-a repositories &amp;ldquo;Github Pages&amp;rdquo; site out of a subfolder instead of the root of
-the repo or a special &amp;ldquo;gh-pages&amp;rdquo; branch. This is not without caveats though:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;The repo cannot follow the &amp;ldquo;username.github.io&amp;rdquo; or &amp;ldquo;project.github.io&amp;rdquo;
-naming scheme.&lt;/li&gt;
-&lt;li&gt;The subfolder &lt;strong&gt;must&lt;/strong&gt; be named &lt;code&gt;docs&lt;/code&gt;, not &lt;code&gt;public&lt;/code&gt; which is what hugo
-renders to by default.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;These are both easily solvable problems. Name your repo something like
-&amp;ldquo;Personal-Site&amp;rdquo; and set &lt;code&gt;publishDir = &amp;quot;docs&amp;quot;&lt;/code&gt; in your config.toml. I used
-a custom domain for my site as well so I really don&amp;rsquo;t care what the repo is
-called because the URL is whatever I set in the &lt;code&gt;CNAME&lt;/code&gt; file in the repo root.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/crowdersoup/PersonalSite&#34; target=&#34;_blank&#34;&gt;You can check out the repo for this site here&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;disclaimer&#34;&gt;Disclaimer&lt;/h3&gt;
-
-&lt;p&gt;Okay, so if you&amp;rsquo;ve made it this far you may be thinking to yourself &amp;ldquo;Hey, this
-guy didn&amp;rsquo;t include any &lt;strong&gt;actual&lt;/strong&gt; data to back up his claims!&amp;ldquo;. And that&amp;rsquo;s on
-purpose. I tested and used Pelican extensively myself and decided I like Hugo
-better. But anyone can fake benchmarks. That&amp;rsquo;s why I think they&amp;rsquo;re rubbish.
-Pelican may be the right choice for you, which is why I encourage you to give
-it a go! I picked Hugo in the end, but you may not!&lt;/p&gt;
-
-&lt;!-- Links --&gt;
-</content>
-      
+      <description>Last night I got the wild hare to migrate my personal site from Pelican to Hugo. I&amp;rsquo;ve been meaning to do it for a while now, so to give myself the push I needed to get it done I deleted my old personal site from Github.
+Differences Front Matter Honestly the biggest different for content is &amp;ldquo;front matter&amp;rdquo;. Both Hugo and Pelican, as static site generators, use front matter to describe pieces of content.</description>
     </item>
     
     <item>
       <title>About</title>
       <link>https://crowdersoup.com/about/</link>
       <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/about/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;I&amp;rsquo;m Aaron Crowder. I&amp;rsquo;m a Software Developer and lover of the web. I&amp;rsquo;m also
-a husband and father, and that job will always come first in my life.&lt;/p&gt;
-
-&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;
-
-&lt;p&gt;I&amp;rsquo;m currently doing my 9-5 at &lt;a href=&#34;https://insidesales.com&#34; target=&#34;_blank&#34;&gt;InsideSales.com&lt;/a&gt;. I&amp;rsquo;m
-building microservices using NodeJS, and dabbling in front-end using
-React/Redux. I really enjoy my day-to-day and I&amp;rsquo;m not currently looking for new
-opportunities. That said, if you have something you really think will pique my
-interest feel free to reach out!&lt;/p&gt;
-</content>
-      
+      <description>I&amp;rsquo;m Aaron Crowder. I&amp;rsquo;m a Software Developer and lover of the web. I&amp;rsquo;m also a husband and father, and that job will always come first in my life.
+Work I&amp;rsquo;m currently doing my 9-5 at InsideSales.com. I&amp;rsquo;m building microservices using NodeJS, and dabbling in front-end using React/Redux. I really enjoy my day-to-day and I&amp;rsquo;m not currently looking for new opportunities. That said, if you have something you really think will pique my interest feel free to reach out!</description>
     </item>
     
     <item>
       <title>Debugging PowerShell in VSCode</title>
       <link>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</link>
       <pubDate>Tue, 26 Apr 2016 09:54:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/programming/tools/powershell-debugging-in-vscode/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;Yesterday I learned a neat trick with &lt;a href=&#34;1&#34; target=&#34;_blank&#34;&gt;Visual Studio Code&lt;/a&gt; when working on
-some PowerShell scripts to help orchestrate build and deployment of our projects
-(more on that in a different post). I knew that VSCode had a debugger, but I
-didn&amp;rsquo;t realize that a debugger for PowerShell had been added &lt;a href=&#34;0&#34; target=&#34;_blank&#34;&gt;via an extension&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I had installed this extension some time ago to help with writing PowerShell
-scripts in VSCode, but I was running my PowerShell prompt in another window to
-actually test them. I realized that I could debug my PowerShell scripts in
-VSCode so I set it up and tried it immediately. AND IT&amp;rsquo;S AWESOME.&lt;/p&gt;
-
-&lt;p&gt;To enable it open up a folder with you PowerShell scripts in it, go to the debug
-tab, click on the gear and select &amp;ldquo;PowerShell&amp;rdquo;. If you don&amp;rsquo;t already have a
-&lt;code&gt;.vscode/launch.json&lt;/code&gt; file it will create one with the right settings. Then you
-just have to open a PowerShell script, hit &lt;code&gt;F5&lt;/code&gt; and away you go!&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s the steps:&lt;/p&gt;
-
-&lt;h3 id=&#34;1-open-the-debug-tab&#34;&gt;1. Open the Debug Tab&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2016/04/vscode_debug_tab.png&#34; alt=&#34;Debug Tab&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-click-the-gear-and-select-powershell-from-the-dropdown&#34;&gt;2. Click the gear and select &amp;ldquo;PowerShell&amp;rdquo; from the dropdown&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2016/04/vscode_debug_select_powershell.png&#34; alt=&#34;Select PowerShell&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;VSCode has been awesome to work with (I&amp;rsquo;m using it to write this post!). Having
-a built in debugger with a light-weight and extensible text editor has been
-really cool! You can set a breakpoint really easily by clicking in the gutter to
-the left of the line number (just like in any good debugging tool). Here&amp;rsquo;s what
-it looks like when you are actually debugging (this is actually my PowerShell
-profile):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2016/04/vscode_debugging.png&#34; alt=&#34;Debugging&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;What other cool things do you love about VSCode?&lt;/p&gt;
-
-&lt;!-- Links --&gt;
-</content>
-      
+      <description>Yesterday I learned a neat trick with Visual Studio Code when working on some PowerShell scripts to help orchestrate build and deployment of our projects (more on that in a different post). I knew that VSCode had a debugger, but I didn&amp;rsquo;t realize that a debugger for PowerShell had been added via an extension.
+I had installed this extension some time ago to help with writing PowerShell scripts in VSCode, but I was running my PowerShell prompt in another window to actually test them.</description>
     </item>
     
     <item>
       <title>Use IFTTT Maker Channel to Trigger Events in a Django App</title>
       <link>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</link>
       <pubDate>Fri, 08 Apr 2016 07:15:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/programming/python/django/use-ifttt-to-trigger-events/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using &lt;a href=&#34;https://ifttt.com&#34; title=&#34;If This Then That&#34; target=&#34;_blank&#34;&gt;IFTTT&lt;/a&gt; and a custom web app. For this project I went with &lt;a href=&#34;https://djangoproject.org&#34; title=&#34;Django Project&#34; target=&#34;_blank&#34;&gt;Django&lt;/a&gt; to build my app out. I&amp;rsquo;d never used it before so I wanted a chance to play with it.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-idea&#34;&gt;The idea&lt;/h2&gt;
-
-&lt;p&gt;The idea is pretty simple. IFTTT will, using their &lt;a href=&#34;https://ifttt.com/maker&#34; title=&#34;IFTTT: Maker Channel&#34; target=&#34;_blank&#34;&gt;Maker Channel&lt;/a&gt;, send a request to any endpoint that you want with a custom payload. I figured I could have that run daily to hit my app, which would then pull a reason that I love my wife from the database and send it to her.&lt;/p&gt;
-
-&lt;p&gt;In my case, I decided to utilize IFTTT to also &lt;strong&gt;send&lt;/strong&gt; the love notes as well. The Maker Channel can not only send requests, but it can receive them as well. So I would pull a reason from the database, send that reason &lt;strong&gt;back&lt;/strong&gt; to IFTTT which would then email it to my wife for me using my own Gmail account. Believe it or not, this was easier than trying to hook up my Gmail account to send the emails myself.&lt;/p&gt;
-
-&lt;h2 id=&#34;execution&#34;&gt;Execution&lt;/h2&gt;
-
-&lt;h3 id=&#34;django-app&#34;&gt;Django App&lt;/h3&gt;
-
-&lt;p&gt;My Django app is &lt;strong&gt;really&lt;/strong&gt; simple. I have two routes, my &lt;code&gt;admin&lt;/code&gt; route and a single &lt;code&gt;index&lt;/code&gt; route. I&amp;rsquo;m using the default Django admin console to add love notes to the database. The index route will handle requests from IFTTT to trigger sending a love note. It also serves up some basic HTML in case anyone accidentally finds this application in the wild. IFTTT passes along a security token so that I know when a request should trigger sending a love note or not.&lt;/p&gt;
-
-&lt;p&gt;Before I dive into explaining the code, you can check out the &lt;a href=&#34;https://github.com/CrowderSoup/LoveDB&#34; title=&#34;Github Repo for the LoveDb&#34; target=&#34;_blank&#34;&gt;Github Repo&lt;/a&gt; for yourself. Feel free to copy all or parts of it for your own use!&lt;/p&gt;
-
-&lt;h4 id=&#34;security&#34;&gt;Security&lt;/h4&gt;
-
-&lt;p&gt;You&amp;rsquo;re not going to want just anyone to be able to trigger sending love notes from your app. You&amp;rsquo;ll need some security in place. Thankfully this is pretty simple using &lt;code&gt;Environment Variables&lt;/code&gt; in your Django app settings. The relevant part of my &lt;code&gt;settings.py&lt;/code&gt; looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;SECRET_KEY = os.environ.get(&#39;SECRET_KEY&#39;) or &amp;quot;youhavemyheart&amp;quot;
-IFTTT_KEY = os.environ.get(&#39;IFTTT_KEY&#39;) or &amp;quot;youhavemyheart&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;m using &lt;code&gt;os.environ.get&lt;/code&gt; to pull the values from my &lt;code&gt;Environment Variables&lt;/code&gt;. To learn more about setting this up when you Deploy your app check out this guide check out these two links:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;http://supervisord.org/subprocess.html#subprocess-environment&#34; title=&#34;Subprocess Env&#34; target=&#34;_blank&#34;&gt;Using Supervisord&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://coderwall.com/p/93jakg/multiple-env-vars-with-uwsgi&#34; title=&#34;Multiple Env Vars with uwsgi&#34; target=&#34;_blank&#34;&gt;Using uwsgi&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The &lt;code&gt;IFTTT_KEY&lt;/code&gt; might be a little confusing, but when you actually connect the &lt;a href=&#34;https://ifttt.com/maker&#34; title=&#34;IFTTT: Maker Channel&#34; target=&#34;_blank&#34;&gt;Maker Channel&lt;/a&gt; to your IFTTT account you&amp;rsquo;ll see a part that says &amp;ldquo;Your key is:&amp;ldquo;. You just need to use that secrete key in your own &lt;code&gt;Environment Variables&lt;/code&gt;. Please be sure not to put this value (or your &lt;code&gt;SECRETE_KEY&lt;/code&gt;) in your actual code. Doing so is a huge security risk if you plan to push your code to a remote respository or share it in any way.&lt;/p&gt;
-
-&lt;h4 id=&#34;index-route&#34;&gt;Index Route&lt;/h4&gt;
-
-&lt;p&gt;Here&amp;rsquo;s what the &lt;code&gt;index&lt;/code&gt; route looks like (if not a little simplified):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from django.http import HttpResponse
-from .models import Reason
-import requests, os
-from LoveDb.settings import SECRET_KEY, IFTTT_KEY
-
-def index(request):
-    response = &amp;quot;&amp;quot;&amp;quot;
-        A brief message in case anyone arrives at this page by mistake.
-    &amp;quot;&amp;quot;&amp;quot;
-
-    their_key = request.GET.get(&#39;key&#39;, &#39;&#39;)
-    my_key = SECRET_KEY
-
-    if(their_key == my_key):
-        reasons = Reason.objects.filter(been_used=False).order_by(&#39;-created_date&#39;)[:1]
-
-        if(len(reasons) &amp;gt; 0):
-            reason = reasons[0]
-
-            love_note = {}
-            love_note[&#39;value1&#39;] = reason.reason_text
-
-            # Send via If This Then That
-            requests.post(&amp;quot;https://maker.ifttt.com/trigger/send_love_note/with/key/{0}&amp;quot;.format(IFTTT_KEY), data=love_note)
-
-            # Update reason so that we don&#39;t use the same one twice (wouldn&#39;t that be embarrassing!)
-            reason.been_used = True
-            reason.save()
-
-    return HttpResponse(response)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;love-note-or-reason-model&#34;&gt;Love note (or &lt;code&gt;Reason&lt;/code&gt;) model&lt;/h4&gt;
-
-&lt;p&gt;Of course, I need to actually STORE the love notes somewhere. I created a &lt;code&gt;Reason&lt;/code&gt; model to do this.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from django.db import models
-
-
-class Reason(models.Model):
-    reason_text = models.CharField(max_length=200)
-    been_used = models.BooleanField()
-    created_date = models.DateTimeField(&#39;date created&#39;)
-
-    def __str__(self):
-        return self.reason_text
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I also need to be able to add things to the database using this model, enter Django admin. The Django admin was actually one of the biggest reasons I used Django for this project. I didn&amp;rsquo;t have time to write user auth or CRUD interfaces. I just needed something simple that did the job. And simple it is:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from django.contrib import admin
-
-from .models import Reason
-
-class ReasonAdmin(admin.ModelAdmin):
-    list_display = (&#39;reason_text&#39;, &#39;created_date&#39;, &#39;been_used&#39;)
-    list_filter = (&#39;been_used&#39;, &#39;created_date&#39;)
-
-admin.site.register(Reason, ReasonAdmin)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;ifttt&#34;&gt;IFTTT&lt;/h3&gt;
-
-&lt;p&gt;The maker channel is pretty easy to use. If you&amp;rsquo;re not familiar with IFTTT, then you should know that IFTTT has two types of things it can do / handle:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Triggers: things that do things based on certain events or at certain times&lt;/li&gt;
-&lt;li&gt;Actions: Things that are triggered by other events.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;So, for my purposes I&amp;rsquo;m going to use the &lt;a href=&#34;https://ifttt.com/date_and_time&#34; title=&#34;IFTTT: Date &amp;amp; Time Channel&#34; target=&#34;_blank&#34;&gt;Date &amp;amp; Time&lt;/a&gt; Channel to &lt;em&gt;trigger&lt;/em&gt; an &lt;em&gt;action&lt;/em&gt; on the Maker Channel. The action on the Maker Channel will make a request to my Django app to trigger sending a love note.&lt;/p&gt;
-
-&lt;p&gt;Sending of the love note will &lt;em&gt;also&lt;/em&gt; be done by IFTTT. Once my app gets a love note and is ready to send it I&amp;rsquo;ll pass it back to IFTTT, again using the Maker Channel to consume a request (this is a &lt;em&gt;trigger&lt;/em&gt;).&lt;/p&gt;
-
-&lt;h4 id=&#34;trigger-sending-of-a-love-note&#34;&gt;Trigger Sending of a Love Note&lt;/h4&gt;
-
-&lt;p&gt;This recipe is really simple. Just pick a time and enter the URL of your Django app that you&amp;rsquo;re using to recieve the trigger. Don&amp;rsquo;t forget to enter the secret key you set up for your app in a &lt;code&gt;GET&lt;/code&gt; parameter on the URL. Your URL should look something like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;http://yourawesomelovedb.com/?key=YOUR_SECRET_KEY_HERE&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;And here&amp;rsquo;s the recipe for you to use right here!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://ifttt.com/view_embed_recipe/406032-trigger-sending-a-love-note-daily&#34; target = &#34;_blank&#34; class=&#34;embed_recipe embed_recipe-l_33&#34; id= &#34;embed_recipe-406032&#34;&gt;&lt;img src= &#39;https://ifttt.com/recipe_embed_img/406032&#39; alt=&#34;IFTTT Recipe: Trigger Sending a Love Note Daily connects date-time to maker&#34; width=&#34;370px&#34; style=&#34;max-width:100%&#34;/&gt;&lt;/a&gt;&lt;script async type=&#34;text/javascript&#34; src= &#34;//ifttt.com/assets/embed_recipe.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;send-the-actual-love-note&#34;&gt;Send the actual Love Note&lt;/h4&gt;
-
-&lt;p&gt;Sending the actual love note is really simple. You just hook the Maker Channel up to gmail and away you go! I&amp;rsquo;m using the &lt;code&gt;Value1&lt;/code&gt; part of the Maker Channel trigger for the body of the love note, which you saw in the &lt;code&gt;index&lt;/code&gt; route of the app. As long as you copy that index route this recipe should be as simple as entering the name of the Love Note event (I named mine &lt;code&gt;send_love_note&lt;/code&gt; which you saw in the &lt;code&gt;index&lt;/code&gt; route) and the Email address of the person you&amp;rsquo;re sending the love note to.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://ifttt.com/view_embed_recipe/406029-send-a-love-note&#34; target = &#34;_blank&#34; class=&#34;embed_recipe embed_recipe-l_16&#34; id= &#34;embed_recipe-406029&#34;&gt;&lt;img src= &#39;https://ifttt.com/recipe_embed_img/406029&#39; alt=&#34;IFTTT Recipe: Send a Love Note connects maker to gmail&#34; width=&#34;370px&#34; style=&#34;max-width:100%&#34;/&gt;&lt;/a&gt;&lt;script async type=&#34;text/javascript&#34; src= &#34;//ifttt.com/assets/embed_recipe.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Now, I&amp;rsquo;m sure that this guide is missing steps, and is probably wrong in some places. But I hope that it&amp;rsquo;s valuable as a jumping off point for anyone who wants to do something similar. Let me know in the comments what you think, or what you used this guide to make!&lt;/p&gt;
-
-&lt;!-- Links --&gt;
-</content>
-      
+      <description>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using IFTTT and a custom web app. For this project I went with Django to build my app out. I&amp;rsquo;d never used it before so I wanted a chance to play with it.</description>
     </item>
     
     <item>
       <title>Build a Torrent Machine and Network Share</title>
       <link>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</link>
       <pubDate>Thu, 21 Jan 2016 13:00:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/raspberry-pi/torrent-machine-and-network-share/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;When I first got a Raspberry Pi the first thing I wanted to build was a home
-server. I wanted to have a central place at home to store files. I also thought
-it would be nice to have a torrent machine to handle downloading whatever I
-wanted. This past weekend I was finally able to get around to building it with
-a Raspberry Pi 2.&lt;/p&gt;
-
-&lt;p&gt;I chose to use &lt;a href=&#34;1&#34; target=&#34;_blank&#34;&gt;Diet Pi&lt;/a&gt; as my OS. Diet Pi is an OS that comes with only the
-bare essentials installed. On first boot it gives you a list of preconfigured
-software to install. This was perfect for me because I could install Samba for
-my file server and transmission for torrents. It made setting up what I wanted
-&lt;strong&gt;really&lt;/strong&gt; easy.&lt;/p&gt;
-
-&lt;p&gt;The process &lt;em&gt;actually&lt;/em&gt; was &lt;strong&gt;really&lt;/strong&gt; simple. So this blog post won&amp;rsquo;t need to
-go into heavy technical detail. Instead, I just want to walk through the simple
-process of steps, with a couple of images, to document it for myself. Hopefully
-others benefit from this as well!&lt;/p&gt;
-
-&lt;p&gt;First I downloaded the &lt;a href=&#34;2&#34; target=&#34;_blank&#34;&gt;Diet Pi image&lt;/a&gt; (based on Debian Jesse) and unziped it.
-Then I made sure my SD card was clean and ready to flash. I like to use the
-Windows CLI tool &lt;code&gt;diskpart&lt;/code&gt;. You can see pretty simply the steps I took from the
-image below:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2016/01/clean_disk_windows_powershell.png&#34; alt=&#34;Cleaning my SD Card&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once my SD Card was clean, I formatted it:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2016/01/new_simple_volume_disk_management.png&#34; alt=&#34;Formatting my SD Card&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It doesn&amp;rsquo;t matter what format you use because you&amp;rsquo;re going to reformat it when
-you write the image to the SD card (I use &lt;a href=&#34;3&#34; target=&#34;_blank&#34;&gt;Win32DiskImager&lt;/a&gt;):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2016/01/write_img.png&#34; alt=&#34;Write Image to SD Card&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Install DietPi&lt;/li&gt;
-&lt;li&gt;Install relevant software thought dietpi installer&lt;/li&gt;
-&lt;li&gt;Configure softwares&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-      
+      <description>When I first got a Raspberry Pi the first thing I wanted to build was a home server. I wanted to have a central place at home to store files. I also thought it would be nice to have a torrent machine to handle downloading whatever I wanted. This past weekend I was finally able to get around to building it with a Raspberry Pi 2.
+I chose to use Diet Pi as my OS.</description>
     </item>
     
     <item>
       <title>Raspberry Pi Zero Giveaway: Review</title>
       <link>https://crowdersoup.com/post/raspberry-pi/raspberry-pi-zero-giveaway/</link>
       <pubDate>Wed, 13 Jan 2016 09:00:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/raspberry-pi/raspberry-pi-zero-giveaway/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;I&amp;rsquo;ve been watching my local &lt;a href=&#34;1&#34; target=&#34;_blank&#34;&gt;Barnes &amp;amp; Nobel&amp;rsquo;s&lt;/a&gt; like a hawk the past few
-weeks. In case you&amp;rsquo;ve been living under a rock, the official Raspberry Pi
-magazine, &lt;a href=&#34;2&#34; target=&#34;_blank&#34;&gt;MagPi&lt;/a&gt;, shipped with the new &lt;a href=&#34;3&#34; target=&#34;_blank&#34;&gt;Raspberry Pi Zero&lt;/a&gt; attached to
-the cover.&lt;/p&gt;
-
-&lt;p&gt;The Raspberry Pi Zero, announced in late November of 2015, has been flying off
-shelves as fast as it&amp;rsquo;s stocked. They&amp;rsquo;re HARD to get your hands on. I should
-know, I&amp;rsquo;ve been trying since they were first announced! I knew my best bet would
-be to get a copy of the MagPi when it finally shipped to the States.&lt;/p&gt;
-
-&lt;p&gt;When first announced, lots of folks started buying up the stock of Zero&amp;rsquo;s and
-selling them at jacked-up prices. The Raspberry Pi foundation urged buyers not
-to encourage price gougers, and to wait for more inventory. I decided to follow
-this request as I felt that price gougers were going against the spirit of
-the Pi itself. Computers should be evenly distributed at an affordable price to
-all people.&lt;/p&gt;
-
-&lt;p&gt;However, I started to realize that the distribution of Zero&amp;rsquo;s (and the MagPi)
-were pretty uneven. Places that didn&amp;rsquo;t need as much stock, got more than needed,
-places that needed more didn&amp;rsquo;t get enough. This led to people starting to buy
-them for other folks, as well as giveaways to try and get these tiny computers
-into as many hands as possible.&lt;/p&gt;
-
-&lt;p&gt;That&amp;rsquo;s why I posted in the &lt;a href=&#34;4&#34; target=&#34;_blank&#34;&gt;Raspberry Pi Subreddit&lt;/a&gt; on Monday. I was FINALLY
-able to get my hands on the coveted Issue #40 of the MagPi. Not only was I able
-to get &lt;strong&gt;one&lt;/strong&gt;, but due to the uneven distribution that I talked about, my local
-Barnes &amp;amp; Nobel had plenty of stock, and I was able to get a &lt;strong&gt;second&lt;/strong&gt;. I
-wanted to be able to give a Zero to someone who hasn&amp;rsquo;t been able to find one
-yet. Someone who would build something truly &lt;em&gt;awesome&lt;/em&gt; with it.&lt;/p&gt;
-
-&lt;p&gt;Before I talk about the results of the giveaway, I want to talk about the
-technology behind it. I decided to use a simple python script to automate
-gathering contest entries from the Reddit Post. I could then, again with python,
-select a random winner.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-code-5&#34;&gt;&lt;a href=&#34;5&#34; target=&#34;_blank&#34;&gt;The Code&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;I put all the code up on Github so that no issues would arise with claims of
-unfairness. I also wanted to write the code in such a way that I could
-easily repurpose it for another giveaway in the future (by either myself or
-anyone else willing to fork the repo).&lt;/p&gt;
-
-&lt;p&gt;I used &lt;a href=&#34;6&#34; target=&#34;_blank&#34;&gt;PRAW&lt;/a&gt; to gather the data from the Reddit Post. It was pretty trivial
-to provide PRAW with a Submission ID and then loop over all the comments. Here&amp;rsquo;s
-what I did:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# We connect to Reddit using a Unique user_agent
-r = praw.Reddit(user_agent=&#39;Reddit Raspberry Pi Giveaway (by /u/IrishLadd)&#39;)
-
-# We get the submission, &amp;quot;SUBMISSION&amp;quot; here comes from a config file
-submission = r.get_submission(submission_id=SUBMISSION)
-
-# Let&#39;s make sure we get ALL comments in the thread:
-submission.replace_more_comments(limit=None, threshold=0)
-
-for comment in submission.comments:
-    # Here I just did some checks to see if the comment matched, and that it&#39;s
-    # author wasn&#39;t already on the list of entries.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Like I said, the code for this really is pretty trivial. It does, as I said
-before, remove any doubt that it was a fair contest. After getting all the
-entries I then count the total number, and get a random &lt;code&gt;int&lt;/code&gt; from 1 to that
-number. This is the winning line!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;entry_count = 0
-with open(&amp;quot;entries.csv&amp;quot;, &amp;quot;r&amp;quot;) as entries:
-    entry_count = sum(1 for _ in entries) - 1
-
-winning_entry_number = random.randint(1, entry_count)
-winning_entry = linecache.getline(&#39;entries.csv&#39;, winning_entry_number)
-winning_entry_parts = winning_entry.split(&#39;,&#39;)
-winning_user = winning_entry_parts[0].strip(&#39; &amp;quot;\&#39;\t\r\n&#39;)
-winning_permalink = winning_entry_parts[1].strip(&#39; &amp;quot;\&#39;\t\r\n&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So, without further adieu&amp;hellip;&lt;/p&gt;
-
-&lt;h3 id=&#34;the-winner&#34;&gt;The Winner!&lt;/h3&gt;
-
-&lt;p&gt;The winner is &lt;a href=&#34;http://reddit.com/u/nullandkale&#34; target=&#34;_blank&#34;&gt;/u/nullandkale&lt;/a&gt;, with
-&lt;a href=&#34;https://www.reddit.com/r/raspberry_pi/comments/40idxl/another_raspberry_pi_0_giveaway/cyushol&#34; target=&#34;_blank&#34;&gt;their entry&lt;/a&gt;
-of:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;I would build either a controller to auto turn my computer off when I left the
-house, or some sort of retropi handheld.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Here&amp;rsquo;s the script spitting out the results:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/cwi9q4m.png&#34; alt=&#34;Results&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Thanks to everyone who played!&lt;/p&gt;
-</content>
-      
+      <description>I&amp;rsquo;ve been watching my local Barnes &amp;amp; Nobel&amp;rsquo;s like a hawk the past few weeks. In case you&amp;rsquo;ve been living under a rock, the official Raspberry Pi magazine, MagPi, shipped with the new Raspberry Pi Zero attached to the cover.
+The Raspberry Pi Zero, announced in late November of 2015, has been flying off shelves as fast as it&amp;rsquo;s stocked. They&amp;rsquo;re HARD to get your hands on. I should know, I&amp;rsquo;ve been trying since they were first announced!</description>
     </item>
     
     <item>
       <title>New Theme!</title>
       <link>https://crowdersoup.com/post/site-updates/new-theme/</link>
       <pubDate>Wed, 06 Jan 2016 16:30:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/site-updates/new-theme/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;I recently started using &lt;a href=&#34;1&#34; target=&#34;_blank&#34;&gt;Pelican&lt;/a&gt; static site generator for this blog. I was
-drawn to it for a few reasons:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;It uses &lt;a href=&#34;2&#34; target=&#34;_blank&#34;&gt;Jinja2&lt;/a&gt; for templates, which I love.&lt;/li&gt;
-&lt;li&gt;It written in python&lt;/li&gt;
-&lt;li&gt;It reminds me a lot of &lt;a href=&#34;3&#34; target=&#34;_blank&#34;&gt;Flask&lt;/a&gt; (this might be because of using Jinja2&amp;hellip;)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I&amp;rsquo;ve done a few interesting things with this site though. I&amp;rsquo;m hosting the repo
-that contains the source content, configuration, etc. on &lt;a href=&#34;4&#34; target=&#34;_blank&#34;&gt;Gitlab&lt;/a&gt;. I
-initially thought I&amp;rsquo;d host this site using Gitlab&amp;rsquo;s new &amp;ldquo;Pages&amp;rdquo; feature, but it
-wasn&amp;rsquo;t quite up to snuff yet. For one, the &amp;ldquo;build&amp;rdquo; process was REALLY slow. For
-two, you couldn&amp;rsquo;t use a custom domain.&lt;/p&gt;
-
-&lt;p&gt;Instead, I decided to host the site out of a &lt;a href=&#34;5&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; repository. Github
-Pages deploy in seconds and they allow me to use a custom domain for my site. I
-actually use &lt;a href=&#34;6&#34; target=&#34;_blank&#34;&gt;Make&lt;/a&gt; to build the site locally during testing as well as
-&amp;ldquo;publishing&amp;rdquo; it to my Github repository. This means that the site and it&amp;rsquo;s
-content are replicated to two different locations on two different services so
-my data and content are as safe as possible (from things like accidental deletions,
-services shutting down and the like).&lt;/p&gt;
-
-&lt;h3 id=&#34;custom-theme&#34;&gt;Custom Theme&lt;/h3&gt;
-
-&lt;p&gt;I wanted to build my own theme for Pelican rather than using one from their
-&lt;a href=&#34;7&#34; target=&#34;_blank&#34;&gt;Theme Repository&lt;/a&gt;. I felt like I could build something in a fairly short
-amount of time that would best match my tastes and how I wanted my site and
-content to come across.&lt;/p&gt;
-
-&lt;p&gt;It took me a few days working here and there, but what you&amp;rsquo;re looking at now is
-my new custom theme!&lt;/p&gt;
-
-&lt;h4 id=&#34;process&#34;&gt;Process&lt;/h4&gt;
-
-&lt;p&gt;Building a Pelican theme was actually a fairly straightforward process.
-Especially compared to some of the CMSs I&amp;rsquo;ve built themes for in the past
-(&lt;em&gt;cough&lt;/em&gt; WordPress &lt;em&gt;cough&lt;/em&gt;). &lt;a href=&#34;8&#34; target=&#34;_blank&#34;&gt;Their guide&lt;/a&gt; gives you a list of files you&amp;rsquo;ll
-need, along with all the different variables and configuration options available
-to you.&lt;/p&gt;
-
-&lt;p&gt;As I mentioned before, Pelican uses Jinja2. All the template files are written
-using it. The theme documentation gives you an idea of what each theme file
-should contain or look like. In a few cases I looked at what some other themes
-where doing from the &lt;a href=&#34;7&#34; target=&#34;_blank&#34;&gt;Theme Repo&lt;/a&gt;. Those two resources combined gave me the
-tools I needed to get building.&lt;/p&gt;
-
-&lt;h4 id=&#34;personalsite-theme&#34;&gt;PersonalSite-theme&lt;/h4&gt;
-
-&lt;p&gt;This theme, lovingly called &amp;ldquo;PersonalSite-theme&amp;rdquo; (or coldly, can never remember
-which it is), uses a couple of fun technologies to improve the development
-process.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NPM&lt;/strong&gt;
-I&amp;rsquo;m using NPM to install various JavaScript packages. A lot of folks combine
-NPM and &lt;a href=&#34;9&#34; target=&#34;_blank&#34;&gt;Bower&lt;/a&gt;, using NPM for cli tools, and Bower for client-side JavaScript
-Libraries (like jQuery, Bootstrap, etc). I decided to &lt;strong&gt;just&lt;/strong&gt; use NPM, as they&amp;rsquo;ve
-fixed a lot of the issues that made using Bower a requirement.&lt;/p&gt;
-
-&lt;p&gt;I use NPM to install:
-- &lt;a href=&#34;10&#34; target=&#34;_blank&#34;&gt;Gulp&lt;/a&gt;, a task runner.
-- &lt;a href=&#34;14&#34; target=&#34;_blank&#34;&gt;Gulp-Sass&lt;/a&gt;, a tool that let&amp;rsquo;s me compile &lt;a href=&#34;15&#34; target=&#34;_blank&#34;&gt;Sass&lt;/a&gt; using Gulp.
-- &lt;a href=&#34;11&#34; target=&#34;_blank&#34;&gt;Bootstrap&lt;/a&gt;, a client-side UI framework. Provides CSS styles and JavaScript
-UI components that make building a clean / beautiful UI somewhat trivial.
-- &lt;a href=&#34;12&#34; target=&#34;_blank&#34;&gt;jQuery&lt;/a&gt;, we all know it. Some of us love it, some hate it. I needed it.
-- &lt;a href=&#34;13&#34; target=&#34;_blank&#34;&gt;Font Awesome&lt;/a&gt;, a font icon library.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Gulp&lt;/strong&gt;
-Gulp is a really important tool that I used in my workflow for developing this
-theme. After using NPM to install packages I then used Gulp to to move things
-from the &lt;code&gt;node_modules&lt;/code&gt; directory that they&amp;rsquo;re downloaded to into the &lt;code&gt;static&lt;/code&gt;
-folder of the theme. Gulp was also responsible for watching my &lt;code&gt;*.sass&lt;/code&gt; file for
-changes and running the compiler.&lt;/p&gt;
-
-&lt;p&gt;These tools combined really streamlined my workflow and made development a
-breeze. Before this project I had used NPM, but not Gulp. I &lt;em&gt;had&lt;/em&gt; used another
-task runner, but Gulp was by far the best one I&amp;rsquo;ve used.&lt;/p&gt;
-
-&lt;h4 id=&#34;usage&#34;&gt;Usage&lt;/h4&gt;
-
-&lt;p&gt;So, you want to use this theme for your own Pelican site? Well, it&amp;rsquo;s REALLY easy.
-You must first have &lt;a href=&#34;https://nodejs.org/en/&#34; target=&#34;_blank&#34;&gt;NodeJS&lt;/a&gt; installed, which
-comes with &lt;code&gt;npm&lt;/code&gt;, a package management tool. Once you have that you can clone
-the repository to where ever you keep your Pelican themes (I personally put them
-as submodules of my Pelican sites repo, but that&amp;rsquo;s a topic for another post) and
-run &lt;code&gt;npm install &amp;amp;&amp;amp; gulp&lt;/code&gt; at the root of the theme repo.&lt;/p&gt;
-
-&lt;h3 id=&#34;wrapping-up&#34;&gt;Wrapping up&lt;/h3&gt;
-
-&lt;p&gt;I hope you enjoyed this post and learning more about Pelican and my sites theme
-in general. If you have any specific questions about this theme or it&amp;rsquo;s usage
-let me know in the comments or &lt;a href=&#34;16&#34; target=&#34;_blank&#34;&gt;on Twitter&lt;/a&gt;.&lt;/p&gt;
-</content>
-      
+      <description>I recently started using Pelican static site generator for this blog. I was drawn to it for a few reasons:
+ It uses Jinja2 for templates, which I love. It written in python It reminds me a lot of Flask (this might be because of using Jinja2&amp;hellip;)  I&amp;rsquo;ve done a few interesting things with this site though. I&amp;rsquo;m hosting the repo that contains the source content, configuration, etc. on Gitlab.</description>
     </item>
     
     <item>
       <title>Resolutions for 2016</title>
       <link>https://crowdersoup.com/post/personal/life/resolutions-2016/</link>
       <pubDate>Sat, 02 Jan 2016 06:00:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/personal/life/resolutions-2016/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;It seems like the &amp;ldquo;thing to do&amp;rdquo; at the beginning of each new year is to make
-New Years Resolutions. If you&amp;rsquo;re at all into blogging then you know that you
-then have to publish those resolutions for all the people who don&amp;rsquo;t read your
-blog to see. That&amp;rsquo;s who/what this post is for.&lt;/p&gt;
-
-&lt;p&gt;I wanted to make my resolutions less about &amp;ldquo;I want to lose weight&amp;rdquo;, and more
-focused on programming, open source, and this blog.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2016/01/shia.jpg&#34; alt=&#34;Don&#39;t let your dreams be dreams&#34; /&gt;
-&lt;small&gt;Some motivation from shia&lt;/small&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;1-blog-at-least-weekly&#34;&gt;1. Blog (at least) Weekly&lt;/h3&gt;
-
-&lt;p&gt;I am here, before the world, committing to writing in this blog at least once a
-week.&lt;/p&gt;
-
-&lt;h3 id=&#34;2-spend-at-least-5-hours-a-week-working-on-open-source-software&#34;&gt;2. Spend (at least) 5 hours a week working on Open Source Software&lt;/h3&gt;
-
-&lt;p&gt;Whether it&amp;rsquo;s my own projects or someone else&amp;rsquo;s I want to spend more time each
-week working on OSS.&lt;/p&gt;
-
-&lt;h3 id=&#34;3-read-1-book-per-quarter&#34;&gt;3. Read 1 book per quarter&lt;/h3&gt;
-
-&lt;p&gt;I&amp;rsquo;ll probably focus on books related to programming, software, or technology in
-general. However, if a work of fiction slips in one quarter I&amp;rsquo;ll count it.&lt;/p&gt;
-
-&lt;h3 id=&#34;4-learn-a-new-programming-language&#34;&gt;4. Learn a new programming language&lt;/h3&gt;
-
-&lt;p&gt;I&amp;rsquo;d like to learn something like Go, but I&amp;rsquo;m not yet decided. Ruby wouldn&amp;rsquo;t be
-bad, neither would Java.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;With these goals in mind, you&amp;rsquo;ll be seeing a lot more of me on this blog. So, to
-my one and only reader, &lt;a href=&#34;http://interiorsbykenz.com&#34; target=&#34;_blank&#34;&gt;Kenz&lt;/a&gt; (my wife), here&amp;rsquo;s to
-a great year ahead!&lt;/p&gt;
-</content>
-      
+      <description>It seems like the &amp;ldquo;thing to do&amp;rdquo; at the beginning of each new year is to make New Years Resolutions. If you&amp;rsquo;re at all into blogging then you know that you then have to publish those resolutions for all the people who don&amp;rsquo;t read your blog to see. That&amp;rsquo;s who/what this post is for.
+I wanted to make my resolutions less about &amp;ldquo;I want to lose weight&amp;rdquo;, and more focused on programming, open source, and this blog.</description>
     </item>
     
     <item>
       <title>Christmas of 2015</title>
       <link>https://crowdersoup.com/post/personal/life/christmas-2015/</link>
       <pubDate>Sun, 27 Dec 2015 13:20:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/personal/life/christmas-2015/</guid>
-      <description></description>
-      
-      <content>&lt;p&gt;This year&amp;rsquo;s Christmas was one for the books. As a father it was SO much fun to
-watch my two girls have the time of their little lives getting and playing with
-all their new toys. Their excitement and wonderment meant the world to me, even
-if I know they don&amp;rsquo;t fully understand everything.&lt;/p&gt;
-
-&lt;p&gt;Before we went down, we had the girls get their Christmas Jamies on!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2015/12/27/EvelynAndRuby-ChristmasJamies.jpg&#34; alt=&#34;Evelyn and Ruby in Christmas Jamies&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When we went downstairs there wasn&amp;rsquo;t much ceremony to it at all. No one &amp;ldquo;played
-Santa&amp;rdquo; as Ralphie and Randy would say. I mean, Evelyn (our oldest) is just
-barely two. Ruby is only 8 months. We did what any sane parent would do at this
-age and pre-opened all their presents and only wrapped a few for Evelyn since
-she seemed to be starting to &amp;ldquo;get it&amp;rdquo; when it came to opening presents on her
-Birthday.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Ruby&lt;/strong&gt;
-&lt;div class=&#34;img-container&#34;&gt;
-&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2015/12/27/Ruby-Presents.jpg&#34; alt=&#34;Ruby playing with her new toys&#34; /&gt;
-&lt;small&gt;
-    Ruby loved her play table. She can stand and make lots and lots of noise!
-&lt;/small&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Evelyn&lt;/strong&gt;
-&lt;div class=&#34;img-container&#34;&gt;
-&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2015/12/27/EvelynOpeningPresent.jpg&#34; alt=&#34;Evelyn Opening a present&#34; /&gt;
-&lt;small&gt;
-    Evelyn was shy about opening presents at first, but really got into it as
-    the morning wore on.
-&lt;/small&gt;
-&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/2015/12/27/EvelynTrains.jpg&#34; alt=&#34;Evelyn playing with her train set&#34; /&gt;
-&lt;small&gt;
-    Probably her favorite present: A train set!
-&lt;/small&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s incredibly rewarding as a parent to see your children enjoy the presents
-you get them. At this age we could have given them cardboard boxes and they
-would have been happy. But Evelyn is starting to get to the age where she&amp;rsquo;s
-actually interested in playing with toys, so we wanted to get her some simple
-things.&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s easy to want to go REALLY overboard on presents, but Evelyn doesn&amp;rsquo;t have
-any expectations so she doesn&amp;rsquo;t care how much or little she gets. We tried to
-keep it simple, and I really think that we were able to do that this year. Time
-will tell if we can do it again next year!&lt;/p&gt;
-
-&lt;p&gt;P.S. Due to my own presents there will be a lot of Raspberry Pi posts coming&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://crowdersoup.com/
-assets/uploads/RaspberryPi2-2.8-TFT-Adafruit.jpg&#34; alt=&#34;Raspberry Pi with 2.8 inch TFT display&#34; /&gt;&lt;/p&gt;
-
-&lt;div class=&#34;img-container&#34;&gt;
-
-&lt;small&gt;
-    I got two Raspberry 2&#39;s. This is one of them with a 2.8&#34; display from
-    Adafruit
-&lt;/small&gt;
-&lt;/div&gt;
-</content>
-      
+      <description>This year&amp;rsquo;s Christmas was one for the books. As a father it was SO much fun to watch my two girls have the time of their little lives getting and playing with all their new toys. Their excitement and wonderment meant the world to me, even if I know they don&amp;rsquo;t fully understand everything.
+Before we went down, we had the girls get their Christmas Jamies on!
+When we went downstairs there wasn&amp;rsquo;t much ceremony to it at all.</description>
     </item>
     
     <item>
       <title>Hour of Code</title>
       <link>https://crowdersoup.com/post/personal/life/hour-of-code/</link>
       <pubDate>Thu, 10 Dec 2015 11:35:26 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/personal/life/hour-of-code/</guid>
-      <description></description>
-      
-      <content>&lt;p&gt;&lt;img alt=&#34;Hour of Code: Star Wars&#34; src=&#34;http://i.imgur.com/erC9xoJ.jpg&#34; style=&#34;width: 100%&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Yesterday I took part in the &lt;a href=&#34;https://hourofcode.com/us&#34; target=&#34;_blank&#34;&gt;Hour of Code&lt;/a&gt; at my
-local high school as a volunteer.In fact, it was at the high school that &lt;strong&gt;I&lt;/strong&gt;
-attended. I had a lot of fun and I was excited to see the stundents gain a
-deeper understanding of code.&lt;/p&gt;
-
-&lt;p&gt;I was especially impressed with the number of young women in the class that
-seemed to really enjoy it. It&amp;rsquo;s a really common misunderstanding that people hold
-that girls aren&amp;rsquo;t interested in tech. I think in too many cases they are steered
-in other directions, towards things they &lt;em&gt;should&lt;/em&gt; be interested in. I&amp;rsquo;m glad to
-have been able to give &lt;strong&gt;all&lt;/strong&gt; the kids an opportunity to see if programming is
-a career they&amp;rsquo;d be interested in.&lt;/p&gt;
-
-&lt;p&gt;We did the &lt;a href=&#34;https://code.org/api/hour/begin/starwars&#34; target=&#34;_blank&#34;&gt;Star Wars&lt;/a&gt; tutorial on
-Code.org (because duh, Star Wars). After a brief introduction from me I turned
-them lose and walked around the room answering questions. I think that was my
-favorite part; hearing the questions from the kids.&lt;/p&gt;
-
-&lt;p&gt;I think the most common question I was asked was this:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;How do I make my game end when they get to a certain number of points?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;It showed that they were thinking about a specific problem and going about it
-logically. They just needed a little help getting the code right since the Code.org
-workspace didn&amp;rsquo;t have a built-in way to do that. The solution I helped the kids
-implement was this (this is, of course, mostly psedo code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var points = 0;
-var pointsToWin = 500;
-
-function whenAddPoints(points) {
-    points += points;
-
-    if(points &amp;gt;= pointsToWin) {
-        endGame(&amp;quot;win&amp;quot;);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I was able to compile a list of links to all their games. In the interest of
-privacy I&amp;rsquo;m not going to share any names here, but here&amp;rsquo;s the links to their games!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/145931894&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/145931894&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/131715140&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/131715140&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146154151&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146154151&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146150876&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146150876&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146162798&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146162798&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146162841&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146162841&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146165909&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146165909&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146179310&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146179310&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146173153&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146173153&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146179809&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146179809&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146177126&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146177126&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146190315&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146190315&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146184183&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146184183&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146190226&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146190226&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146185949&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146185949&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146185949&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146185949&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146309412&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146309412&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146325187&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146325187&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146326633&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146326633&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146326883&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146326883&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146325711&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146325711&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146326633&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146326633&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146324176&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146324176&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146336276&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146336276&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146351044&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146351044&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146352443&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146352443&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146373515&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146373515&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146351153&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146351153&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146351523&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146351523&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146370707&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146370707&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146375514&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146375514&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146363218&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146363218&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146374190&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146374190&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146368050&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146368050&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146373859&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146373859&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146373588&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146373588&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146377391&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146377391&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146379532&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146379532&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146380822&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146380822&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://studio.code.org/c/146384535&#34; target=&#34;_blank&#34;&gt;https://studio.code.org/c/146384535&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-      
+      <description>Yesterday I took part in the Hour of Code at my local high school as a volunteer.In fact, it was at the high school that I attended. I had a lot of fun and I was excited to see the stundents gain a deeper understanding of code.
+I was especially impressed with the number of young women in the class that seemed to really enjoy it. It&amp;rsquo;s a really common misunderstanding that people hold that girls aren&amp;rsquo;t interested in tech.</description>
     </item>
     
     <item>
       <title>Using vh with calc In CSS</title>
       <link>https://crowdersoup.com/post/programming/css/using-vh-with-calc-in-css/</link>
       <pubDate>Tue, 17 Nov 2015 09:45:00 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/programming/css/using-vh-with-calc-in-css/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;p&gt;I often have need to build layout&amp;rsquo;s that vary depending on the content put in
-them. I can&amp;rsquo;t always count on that content being the same (&lt;em&gt;cough&lt;/em&gt; CMSs &lt;em&gt;cough&lt;/em&gt;).
-It&amp;rsquo;s just one of those things you have to do.&lt;/p&gt;
-
-&lt;p&gt;One thing I&amp;rsquo;m having to do a lot though, is making the body of a page take up a
-certain amount of space so that the footer doesn&amp;rsquo;t look weird. In the past I&amp;rsquo;ve
-used JavaScript to make the footer take up the remaining space on the page if the
-content didn&amp;rsquo;t take up enough. I never really liked that solution though, because
-it breaks if the user turns off JavaScript.&lt;/p&gt;
-
-&lt;p&gt;Today I wanted to share with you two CSS things, that when combined solve my
-particular problem, and might just solve yours too.&lt;/p&gt;
-
-&lt;h3 id=&#34;vh&#34;&gt;vh&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Equal to 1% of the height of the initial containing block.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;em&gt;from &lt;a href=&#34;http://www.w3.org/TR/css3-values/#viewport-relative-lengths&#34; target=&#34;_blank&#34;&gt;w3.org&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;This gives us the &lt;strong&gt;height&lt;/strong&gt; of the page, which we&amp;rsquo;re going to need to calculate
-how much space the main content area of the page should take up.&lt;/p&gt;
-
-&lt;h3 id=&#34;clac&#34;&gt;clac&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;With &lt;code&gt;calc()&lt;/code&gt;, you can perform calculations to determine CSS property values.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;em&gt;from &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/calc&#34; target=&#34;_blank&#34;&gt;MDN&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;This allows us to perform mathematical calculations and set a property to the
-result. This, combined with &lt;code&gt;vh&lt;/code&gt; gives us a lot of power!&lt;/p&gt;
-
-&lt;h3 id=&#34;my-solution&#34;&gt;My Solution&lt;/h3&gt;
-
-&lt;p&gt;In order to ensure that the body of a site I&amp;rsquo;m working on is always taking up &lt;em&gt;at
-least&lt;/em&gt; enough to completely fill the page. I have a couple of things on the page
-that are fixed height (header and footer). I take the aggregate height of them
-and subtract that from &lt;code&gt;100vh&lt;/code&gt; (100% of the viewport height), like so:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;#body {
-    min-height: calc(100vh - 405px);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now &lt;code&gt;#body&lt;/code&gt; is going to be &lt;em&gt;at least&lt;/em&gt; the height of &lt;code&gt;100vh - 405px&lt;/code&gt;!&lt;/p&gt;
-
-&lt;p&gt;This is just one use-case. I&amp;rsquo;m sure there are tons of others! What are you using
-&lt;code&gt;calc&lt;/code&gt; and &lt;code&gt;vh&lt;/code&gt; for in your projects?&lt;/p&gt;
-</content>
-      
+      <description>I often have need to build layout&amp;rsquo;s that vary depending on the content put in them. I can&amp;rsquo;t always count on that content being the same (cough CMSs cough). It&amp;rsquo;s just one of those things you have to do.
+One thing I&amp;rsquo;m having to do a lot though, is making the body of a page take up a certain amount of space so that the footer doesn&amp;rsquo;t look weird. In the past I&amp;rsquo;ve used JavaScript to make the footer take up the remaining space on the page if the content didn&amp;rsquo;t take up enough.</description>
     </item>
     
     <item>
       <title>Managing Scope Using Call, Apply, and Bind</title>
       <link>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</link>
       <pubDate>Mon, 16 Nov 2015 13:20:08 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/programming/javascript/managing-scope-using-call-apply-and-bind/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;h2 id=&#34;call-https-developer-mozilla-org-en-us-docs-web-javascript-reference-global-objects-function-call&#34;&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call&#34; target=&#34;_blank&#34;&gt;Call&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Calls a function, with the specified arguments passed in&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The first argument becomes &lt;code&gt;this&lt;/code&gt;, the rest are passed in as regular arguments.
-Using call allows you to maintain the scope of &lt;code&gt;this&lt;/code&gt; accross methods. It works
-like this:&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;//jsfiddle.net/CrowderSoup/xoyf7xt4/embedded/&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Here we&amp;rsquo;re using prototypical inheritance to allow us to inheirit properties from
-&lt;code&gt;Animal&lt;/code&gt; in &lt;code&gt;Dog&lt;/code&gt; and &lt;code&gt;Cat&lt;/code&gt;. Using &lt;code&gt;call&lt;/code&gt; allows us to invoke &lt;code&gt;Animal&lt;/code&gt; to initialize
-it&amp;rsquo;s properties while maintaining the correct scope.&lt;/p&gt;
-
-&lt;h2 id=&#34;apply-https-developer-mozilla-org-en-us-docs-web-javascript-reference-global-objects-function-apply&#34;&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply&#34; target=&#34;_blank&#34;&gt;Apply&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Calls a function, with the specified arguments passed in as an array&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Just like &lt;code&gt;call&lt;/code&gt;, the first argument becomes &lt;code&gt;this&lt;/code&gt;. The rest of the args are
-passed in as an array.&lt;/p&gt;
-
-&lt;h2 id=&#34;bind-https-developer-mozilla-org-en-us-docs-web-javascript-reference-global-objects-function-bind&#34;&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind&#34; target=&#34;_blank&#34;&gt;Bind&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Creates a bound function with the same function body as the function it&amp;rsquo;s called
-on&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;With &lt;code&gt;bind&lt;/code&gt;, we actually get a reference to a new function. The first argument
-passed to &lt;code&gt;bind&lt;/code&gt; becomes &lt;code&gt;this&lt;/code&gt;, and the rest are passed as regular arguments.
-This is especially handy for event handlers.&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;//jsfiddle.net/CrowderSoup/oas0LLhe/embedded/&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&#34;wrapping-up&#34;&gt;Wrapping up&lt;/h2&gt;
-
-&lt;p&gt;These examples are fairly trivial, but they do serve to show that it&amp;rsquo;s possible
-to manage scope without aliasing &lt;code&gt;this&lt;/code&gt; to something like &lt;code&gt;self&lt;/code&gt;. In a lot of
-cases that can actually be pretty confusing. But, as with everything, use what
-makes sense! This method may or may not work well for you, and that&amp;rsquo;s okay.&lt;/p&gt;
-</content>
-      
+      <description>Call Calls a function, with the specified arguments passed in
+The first argument becomes this, the rest are passed in as regular arguments. Using call allows you to maintain the scope of this accross methods. It works like this:
+ Here we&amp;rsquo;re using prototypical inheritance to allow us to inheirit properties from Animal in Dog and Cat. Using call allows us to invoke Animal to initialize it&amp;rsquo;s properties while maintaining the correct scope.</description>
     </item>
     
     <item>
       <title>Anatomy of a Commit Message</title>
       <link>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</link>
       <pubDate>Fri, 13 Nov 2015 07:15:33 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/programming/anatomy-of-a-commit-message/</guid>
-      <description></description>
-      
-      <content>
-
-&lt;h2 id=&#34;1-subject-line&#34;&gt;1. Subject Line&lt;/h2&gt;
-
-&lt;p&gt;The Subject Line is the first line of your commit message. Often the subject
-alone is enough, but if it&amp;rsquo;s not and you need a body be sure to separate the
-subject and body with a blank line.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;First line of a commit message&lt;/li&gt;
-&lt;li&gt;Often the only part you&amp;rsquo;ll need&lt;/li&gt;
-&lt;li&gt;Separated from the body by a blank line&lt;/li&gt;
-&lt;li&gt;Soft limit of 50 characters, hard limit of 69
-
-&lt;ul&gt;
-&lt;li&gt;Github&amp;rsquo;s interface truncates the subject line at 69 characters&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Capitalize!&lt;/li&gt;
-&lt;li&gt;Don&amp;rsquo;t end with a period&lt;/li&gt;
-&lt;li&gt;Use the imperative mood
-
-&lt;ul&gt;
-&lt;li&gt;Git itself uses the imperative mood when it creates a commit on your behalf&lt;/li&gt;
-&lt;li&gt;We usually write in the indicative mood, which is more about reporting facts&lt;/li&gt;
-&lt;li&gt;To help, the subject line should always complete the sentence:
-
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;If applied, this commit will&amp;hellip;&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;2-body&#34;&gt;2. Body&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Wrap the body at 72 characters
-
-&lt;ul&gt;
-&lt;li&gt;This give git plenty of room to indent text while still keeping things
-under 80 characters.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Use the body to explain what and why vs. how
-
-&lt;ul&gt;
-&lt;li&gt;The code tells us the &lt;em&gt;how&lt;/em&gt;, the body of your commit message should tell us
-&lt;em&gt;what&lt;/em&gt; and &lt;em&gt;why&lt;/em&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;sample-commit-messages&#34;&gt;Sample Commit Messages&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Bad&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Fixed the thing
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;Good&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Fix all the broken things
-
-There were some broken things so I refactored many codes to simplify
-and fix all the things.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Uses the imperative mood for the subject line&lt;/li&gt;
-&lt;li&gt;Separates the subject from the body with a single blank line&lt;/li&gt;
-&lt;li&gt;Describes the what and why in the body&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-      
+      <description>1. Subject Line The Subject Line is the first line of your commit message. Often the subject alone is enough, but if it&amp;rsquo;s not and you need a body be sure to separate the subject and body with a blank line.
+ First line of a commit message Often the only part you&amp;rsquo;ll need Separated from the body by a blank line Soft limit of 50 characters, hard limit of 69  Github&amp;rsquo;s interface truncates the subject line at 69 characters  Capitalize!</description>
     </item>
     
     <item>
       <title>JavaScript: Array&#39;s with named Properties</title>
       <link>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</link>
       <pubDate>Wed, 11 Nov 2015 12:46:49 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/programming/javascript/javascript-arrays-with-named-properties/</guid>
-      <description></description>
-      
-      <content>&lt;p&gt;Adding named properties to arrays in JavaScript can be handy in a few different
-cases. For instance:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;You need a nice formatted title / description for a data set. Rather than
-having multiple objects you can use named properties and get away with only
-using one.&lt;/li&gt;
-&lt;li&gt;You want to add some functions to an array for whatever reason&lt;/li&gt;
-&lt;li&gt;Lots of other reasons that I can&amp;rsquo;t think of right now!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Basically, this just buys you a nice way to encapsulate all the data you might
-need, without having to use an object with a nested array, or multiple objects.
-Maybe your way is more clean or better for this reason or that&amp;hellip; I just
-thought this was neat. :)&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s get into some code to play around with this. I&amp;rsquo;m going to use
-&lt;a href=&#34;https://jsfiddle.net&#34; target=&#34;_blank&#34;&gt;JSFiddle.net&lt;/a&gt; for this so you can play with the code
-yourself.&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;300&#34; src=&#34;//jsfiddle.net/CrowderSoup/b41q0hc6/8/embedded/&#34; allowfullscreen=&#34;allowfullscreen&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;The reason that this works is because of the way that &lt;code&gt;array.length&lt;/code&gt; is
-updated. In JavaScript, &lt;code&gt;array.length&lt;/code&gt; is updated whenever you use a built-in
-array method (e.g., join, push, unshift, etc). So, when you build an array,
-all the numerically indexed properties are taken into accound as part of the
-length.&lt;/p&gt;
-
-&lt;p&gt;When you add a named property to the array it doesn&amp;rsquo;t update the length, and
-therefore you can iterate over an array and only get the numerically indexed
-items.&lt;/p&gt;
-</content>
-      
+      <description>Adding named properties to arrays in JavaScript can be handy in a few different cases. For instance:
+ You need a nice formatted title / description for a data set. Rather than having multiple objects you can use named properties and get away with only using one. You want to add some functions to an array for whatever reason Lots of other reasons that I can&amp;rsquo;t think of right now!  Basically, this just buys you a nice way to encapsulate all the data you might need, without having to use an object with a nested array, or multiple objects.</description>
     </item>
     
     <item>
       <title>Powershell Markdown Preview</title>
       <link>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</link>
       <pubDate>Wed, 28 Oct 2015 00:09:20 +0000</pubDate>
-      <author>Aaron Crowder</author>
+      
       <guid>https://crowdersoup.com/post/programming/utils/powershell-markdown-preview/</guid>
-      <description></description>
-      
-      <content>&lt;p&gt;I&amp;rsquo;m at &lt;a href=&#34;http://anglebrackets.org&#34; target=&#34;_blank&#34;&gt;Angle Brackets&lt;/a&gt;. I&amp;rsquo;ve decided that I wanted to
-try taking all my notes in vim. I LOVE using vim. It&amp;rsquo;s a really awesome, powerful,
-and extendable command-line editor. I enjoy that it&amp;rsquo;s really distraction free.
-Being distracted is something that I struggle with so I really look for ways to
-stay focused.&lt;/p&gt;
-
-&lt;p&gt;I write in &lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt; as well. It&amp;rsquo;s
-a great way to get a simple, clean, well formatted plain text document that can
-be processed and produce HTML. One of the biggest things I look for in a Markdown
-editor is being able to preview the HTML that my markdown produces. Obviously
-vim isn&amp;rsquo;t going to give that to me out of the box. I wouldn&amp;rsquo;t expect it to either.&lt;/p&gt;
-
-&lt;p&gt;However, I figured I could either extend vim, or better yet, my shell to give me
-markdown previews. After a bit of &lt;a href=&#34;https://www.google.com/webhp#newwindow=1&amp;amp;q=npm+cli+markdown+preview&#34; target=&#34;_blank&#34;&gt;Googling&lt;/a&gt;
-I was able to find an npm package called &lt;a href=&#34;https://www.npmjs.com/package/github-markdown-preview&#34; target=&#34;_blank&#34;&gt;github-markdown-preview&lt;/a&gt;.
-I knew I would be able to leverage this from within vim by sending the commands
-to my shell using &lt;code&gt;:shell&lt;/code&gt; or even &lt;code&gt;:!&lt;/code&gt;. I wanted something a little more elegant
-though.&lt;/p&gt;
-
-&lt;p&gt;Since I&amp;rsquo;m in Windows I use PowerShell. I added the following to my PowerShell
-profile:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;Set-Alias -Name gmp -Value github-markdown-preview
-
-Function mkdown-preview($file)
-{
-    $preview_dir = $home + &amp;quot;\AppData\Local\MarkdownPreview&amp;quot;;
-    if((Test-Path $preview_dir) -eq 0) {
-        New-Item -ItemType Directory -Force -Path $preview_dir;
-    }
-
-    $preview_file = $preview_dir + &amp;quot;\mkdown-preview.html&amp;quot;
-
-    gmp $file -o $preview_file
-
-    Start-Process &amp;quot;chrome.exe&amp;quot; &amp;quot;file:///C:/Users/acrowder/AppData/Local/MarkdownPreview/mkdown-preview.html&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now I can do the following on the command line:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdown-preview(&#39;mkdown-file.md&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If the MarkDown preview folder doesn&amp;rsquo;t exist then it will be created and then
-we&amp;rsquo;ll output the HTML generated from your Markdown to a file. Finally, we&amp;rsquo;ll
-open that file in Chrome for the preview. Obviously you can edit that function
-to open up the browser of your choice.&lt;/p&gt;
-</content>
-      
+      <description>I&amp;rsquo;m at Angle Brackets. I&amp;rsquo;ve decided that I wanted to try taking all my notes in vim. I LOVE using vim. It&amp;rsquo;s a really awesome, powerful, and extendable command-line editor. I enjoy that it&amp;rsquo;s really distraction free. Being distracted is something that I struggle with so I really look for ways to stay focused.
+I write in Markdown as well. It&amp;rsquo;s a great way to get a simple, clean, well formatted plain text document that can be processed and produce HTML.</description>
     </item>
     
   </channel>

@@ -1,103 +1,77 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"  lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-<title>Use IFTTT Maker Channel to Trigger Events in a Django App | CrowderSoup</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>Use IFTTT Maker Channel to Trigger Events in a Django App</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarnavaltmarkup">
+            <div class="navbar-nav">
+              
+								
+            		
+                <a class="nav-item nav-link" href="/" title="home page" >Home</a>
+              
+								
+            		
+                <a class="nav-item nav-link" href="/about/" title="about page" >About</a>
+              
+								
+            		
+                <a class="nav-item nav-link" href="https://github.com/CrowderSoup" title="GitHub Profile" target="_blank">GitHub</a>
+              
+								
+            		
+                <a class="nav-item nav-link" href="https://twitter.com/CrowderSoup" title="Twitter Profile" target="_blank">Twitter</a>
+              
+								
+            		
+                <a class="nav-item nav-link" href="https://socialmast.xyz/@CrowderSoup" title="Mastodon Profile" target="_blank">Mastodon</a>
+              
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">CrowderSoup</a></h1>
+          <span id="author-name">
+            <h6>A blog by <a href="/about/">Aaron Crowder</a></h6>
+          </span>
+        </section>
 
 
-
-<link href="https://crowdersoup.com/index.xml" rel="alternate" type="application/rss+xml" title="CrowderSoup" />
-
-<link rel="stylesheet" href="/css/style.css"/><link rel='stylesheet' href='https://crowdersoup.com/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-</head>
-<body>
-<section class="section">
-  <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item" href="https://crowdersoup.com/">
-          <h1 class="title is-4">CrowderSoup</h1>
-        </a>
-      </div>
-      <div class="nav-right">
-        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/CrowderSoup'
-            target='_blank' rel='noopener'>
-            <span class="icon">
-              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-    
-  </svg></i>
-            </span>
-          </a><a class="level-item" aria-label="github" href='https://github.com/CrowderSoup'
-            target='_blank' rel='noopener'>
-            <span class="icon">
-              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-    
-  </svg></i>
-            </span>
-          </a><a class="level-item" aria-label="email" href='mailto:aaron.crowder@gmail.com'
-            target='_blank' rel='noopener'>
-            <span class="icon">
-              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-    <polyline points="22,6 12,13 2,6"/>
-    
-  </svg></i>
-            </span>
-          </a></nav>
-      </div>
-    </nav>
-
-    <nav class="nav">
-      
-
-      
-    </nav>
-
+<div class="blog-post">
+  <h1>Use IFTTT Maker Channel to Trigger Events in a Django App</h1>
+  <div class="blog-post-subheader">
+    <time>08 Apr 2016</time>
   </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="subtitle tags is-6 is-pulled-right">
-      
-      
-<a class="subtitle is-6" href="/tags/django">#django</a>
-
-
-
-  
-  | <a class="subtitle is-6" href="/tags/python">#python</a>
-  
-  | <a class="subtitle is-6" href="/tags/ifttt">#ifttt</a>
-  
-  | <a class="subtitle is-6" href="/tags/maker">#maker</a>
-  
-
-      
-    </div>
-    <h2 class="subtitle is-6">April 8, 2016</h2>
-    <h1 class="title">Use IFTTT Maker Channel to Trigger Events in a Django App</h1>
+  <div class="blog-post-content">
     
-    <div class="content">
-      
 
-<p>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using <a href="https://ifttt.com" title="If This Then That" target="_blank">IFTTT</a> and a custom web app. For this project I went with <a href="https://djangoproject.org" title="Django Project" target="_blank">Django</a> to build my app out. I&rsquo;d never used it before so I wanted a chance to play with it.</p>
+<p>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using <a href="https://ifttt.com" title="If This Then That">IFTTT</a> and a custom web app. For this project I went with <a href="https://djangoproject.org" title="Django Project">Django</a> to build my app out. I&rsquo;d never used it before so I wanted a chance to play with it.</p>
 
 <h2 id="the-idea">The idea</h2>
 
-<p>The idea is pretty simple. IFTTT will, using their <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel" target="_blank">Maker Channel</a>, send a request to any endpoint that you want with a custom payload. I figured I could have that run daily to hit my app, which would then pull a reason that I love my wife from the database and send it to her.</p>
+<p>The idea is pretty simple. IFTTT will, using their <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel">Maker Channel</a>, send a request to any endpoint that you want with a custom payload. I figured I could have that run daily to hit my app, which would then pull a reason that I love my wife from the database and send it to her.</p>
 
 <p>In my case, I decided to utilize IFTTT to also <strong>send</strong> the love notes as well. The Maker Channel can not only send requests, but it can receive them as well. So I would pull a reason from the database, send that reason <strong>back</strong> to IFTTT which would then email it to my wife for me using my own Gmail account. Believe it or not, this was easier than trying to hook up my Gmail account to send the emails myself.</p>
 
@@ -107,7 +81,7 @@
 
 <p>My Django app is <strong>really</strong> simple. I have two routes, my <code>admin</code> route and a single <code>index</code> route. I&rsquo;m using the default Django admin console to add love notes to the database. The index route will handle requests from IFTTT to trigger sending a love note. It also serves up some basic HTML in case anyone accidentally finds this application in the wild. IFTTT passes along a security token so that I know when a request should trigger sending a love note or not.</p>
 
-<p>Before I dive into explaining the code, you can check out the <a href="https://github.com/CrowderSoup/LoveDB" title="Github Repo for the LoveDb" target="_blank">Github Repo</a> for yourself. Feel free to copy all or parts of it for your own use!</p>
+<p>Before I dive into explaining the code, you can check out the <a href="https://github.com/CrowderSoup/LoveDB" title="Github Repo for the LoveDb">Github Repo</a> for yourself. Feel free to copy all or parts of it for your own use!</p>
 
 <h4 id="security">Security</h4>
 
@@ -120,11 +94,11 @@ IFTTT_KEY = os.environ.get('IFTTT_KEY') or &quot;youhavemyheart&quot;
 <p>I&rsquo;m using <code>os.environ.get</code> to pull the values from my <code>Environment Variables</code>. To learn more about setting this up when you Deploy your app check out this guide check out these two links:</p>
 
 <ol>
-<li><a href="http://supervisord.org/subprocess.html#subprocess-environment" title="Subprocess Env" target="_blank">Using Supervisord</a></li>
-<li><a href="https://coderwall.com/p/93jakg/multiple-env-vars-with-uwsgi" title="Multiple Env Vars with uwsgi" target="_blank">Using uwsgi</a></li>
+<li><a href="http://supervisord.org/subprocess.html#subprocess-environment" title="Subprocess Env">Using Supervisord</a></li>
+<li><a href="https://coderwall.com/p/93jakg/multiple-env-vars-with-uwsgi" title="Multiple Env Vars with uwsgi">Using uwsgi</a></li>
 </ol>
 
-<p>The <code>IFTTT_KEY</code> might be a little confusing, but when you actually connect the <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel" target="_blank">Maker Channel</a> to your IFTTT account you&rsquo;ll see a part that says &ldquo;Your key is:&ldquo;. You just need to use that secrete key in your own <code>Environment Variables</code>. Please be sure not to put this value (or your <code>SECRETE_KEY</code>) in your actual code. Doing so is a huge security risk if you plan to push your code to a remote respository or share it in any way.</p>
+<p>The <code>IFTTT_KEY</code> might be a little confusing, but when you actually connect the <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel">Maker Channel</a> to your IFTTT account you&rsquo;ll see a part that says &ldquo;Your key is:&ldquo;. You just need to use that secrete key in your own <code>Environment Variables</code>. Please be sure not to put this value (or your <code>SECRETE_KEY</code>) in your actual code. Doing so is a huge security risk if you plan to push your code to a remote respository or share it in any way.</p>
 
 <h4 id="index-route">Index Route</h4>
 
@@ -200,7 +174,7 @@ admin.site.register(Reason, ReasonAdmin)
 <li>Actions: Things that are triggered by other events.</li>
 </ol>
 
-<p>So, for my purposes I&rsquo;m going to use the <a href="https://ifttt.com/date_and_time" title="IFTTT: Date &amp; Time Channel" target="_blank">Date &amp; Time</a> Channel to <em>trigger</em> an <em>action</em> on the Maker Channel. The action on the Maker Channel will make a request to my Django app to trigger sending a love note.</p>
+<p>So, for my purposes I&rsquo;m going to use the <a href="https://ifttt.com/date_and_time" title="IFTTT: Date &amp; Time Channel">Date &amp; Time</a> Channel to <em>trigger</em> an <em>action</em> on the Maker Channel. The action on the Maker Channel will make a request to my Django app to trigger sending a love note.</p>
 
 <p>Sending of the love note will <em>also</em> be done by IFTTT. Once my app gets a love note and is ready to send it I&rsquo;ll pass it back to IFTTT, again using the Maker Channel to consume a request (this is a <em>trigger</em>).</p>
 
@@ -226,49 +200,35 @@ admin.site.register(Reason, ReasonAdmin)
 
 <!-- Links -->
 
-      
-      <div class="related">
+  </div>
+  
+<div id="disqus_thread"></div>
+<script>
+  var disqus_shortname = 'aaroncrowder';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-<h3>Similar articles:</h3>
-<ul>
-	
-	<li><a href="/post/raspberry-pi/raspberry-pi-zero-giveaway/">Raspberry Pi Zero Giveaway: Review</a></li>
-	
-</ul>
+
 </div>
-      
-    </div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 Aaron Crowder.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
+        </small>
+      </footer>
+    </div> 
+
     
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <aside><div id="disqus_thread"></div></aside>
-    <script type="text/javascript">
-      var disqus_shortname = 'aaroncrowder';
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container has-text-centered">
-    <p>&copy; <a href="https://github.com/CrowderSoup">Aaron Crowder</a> 2018</p>
-    
-      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
-    
-  </div>
-</section>
-
-
-
-</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
 </html>
 
