@@ -9,7 +9,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
 
-        <title>Update</title>
+        <title>Basics Plus: A new Hugo Theme</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -59,33 +59,43 @@
         </section>
 
 
-<section>
-  <ul class="posts_listing">
-    
-    <li>
-      <div class="row" id="posts">
-        <div class="d-none d-sm-block col-sm-3 date-time-title">
-          <time>30 Nov 2018</time>
-        </div>
-        <div class="col-sm date-time-title post">
-          <a href="/post/site-updates/basics-plus/">Basics Plus: A new Hugo Theme</a>
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="row" id="posts">
-        <div class="d-none d-sm-block col-sm-3 date-time-title">
-          <time>06 Jan 2016</time>
-        </div>
-        <div class="col-sm date-time-title post">
-          <a href="/post/site-updates/new-theme/">New Theme!</a>
-        </div>
-      </div>
-    </li>
-    
-  </ul>
-</section>
+<div class="blog-post">
+  <h1>Basics Plus: A new Hugo Theme</h1>
+  <div class="blog-post-subheader">
+    <time>30 Nov 2018</time>
+  </div>
+  <div class="blog-post-content">
+    <p>This site has had a couple new themes lately, but I&rsquo;ve finally settled on one:
+<a href="https://github.com/crowdersoup/basics-plus">Basics Plus</a>. This is actually a theme that I&rsquo;ve forked from <a href="https://github.com/arjunkrishnababu96/basics">Basics</a>.
+It&rsquo;s a fairly simple and paired down theme. I forked it so that I could change
+a couple things:</p>
+
+<ol>
+<li>The top menu (more dynamic, able to add more items)</li>
+<li>Add Disqus comments</li>
+<li>The byline</li>
+</ol>
+
+<p>These are some fairly small feature changes. I plan to make more changes
+/ refinements going forward while keeping the clean / simple look and feel.</p>
+
+<!-- Links -->
+
+  </div>
+  
+<div id="disqus_thread"></div>
+<script>
+  var disqus_shortname = 'aaroncrowder';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
 
       <footer>
         <hr>
