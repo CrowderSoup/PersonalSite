@@ -1,43 +1,41 @@
 baseurl = "https://crowdersoup.com/"
-languageCode = "en"
+languageCode = "en-us"
 title = "CrowderSoup"
-theme = "kiss"
-copyright = "&copy; <a href=\"https://github.com/CrowderSoup\">Aaron Crowder</a> 2018"
+theme = "basics-plus"
 disqusShortname = "aaroncrowder"
-googleAnalytics = ""
-# Number of posts per page
-Paginate = 5
-enableRobotsTXT = true
 
-publishDir = "docs"
+[params]
+    author = "Aaron Crowder"
+    github = "CrowderSoup"
 
-[params.assets]
-customCSS = ["css/custom.css"]
-
-[params.rss]
-includeContent = true # Includes whole content in rss
-authorName = "Aaron Crowder" # Site author's full name
-authorEmail = "aaron.crowder@gmail.com"
-
-[params.info]
-adsense = "" # Adsense ID (ID only, without ca-pub-)
-enableSocial = false # Adds OpenGraph and Twitter cards
-homeTitle = "CrowderSoup" # Title for home page
-poweredby = true # Adds powered by Hugo and Kiss below Copyright section
-related = true # Includes related articles
-
-
-[params.social]
-twitter = "CrowderSoup"
-github = "CrowderSoup"
-email = "aaron.crowder@gmail.com"
-
-[params.social.config]
-platforms = ["twitter","github","email"]
-
-[taxonomies]
-tag ="tags"
-
-[blackfriday]
-hrefTargetBlank = true
-
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    title = "home page"
+    url = "/"
+    weight = -110 # Ensure "Home" page is first
+	[[menu.main]]
+		identifier = "about"
+		name = "About"
+		title = "about page"
+		url = "/about/"
+		weight = -109 # Ensure "About" page is second
+	[[menu.main]]
+		identifier = "GitHub"
+		name = "GitHub"
+		title = "GitHub Profile"
+		url = "https://github.com/CrowderSoup"
+		weight = 1
+	[[menu.main]]
+		identifier = "Twitter"
+		name = "Twitter"
+		title = "Twitter Profile"
+		url = "https://twitter.com/CrowderSoup"
+		weight = 2
+	[[menu.main]]
+		identifier = "Mastodon"
+		name = "Mastodon"
+		title = "Mastodon Profile"
+		url = "https://socialmast.xyz/@CrowderSoup"
+		weight = 3

@@ -1,7 +1,6 @@
 +++
 title = "About"
 date = "2017-11-29"
-menu = "main"
 +++
 
 I'm Aaron Crowder. I'm a Software Developer and lover of the web. I'm also

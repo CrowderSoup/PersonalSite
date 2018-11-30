@@ -1,6 +1,3 @@
-[submodule "themes/Mainroad"]
-	path = themes/Mainroad
-	url = git@github.com:Vimux/Mainroad.git
-[submodule "themes/kiss"]
-	path = themes/kiss
-	url = https://github.com/ribice/kiss.git
+[submodule "themes/basics-plus"]
+	path = themes/basics-plus
+	url = https://github.com/CrowderSoup/basics-plus.git
