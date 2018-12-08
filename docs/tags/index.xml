@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>Dev Ops</title>
+      <link>https://crowdersoup.com/tags/dev-ops/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/tags/dev-ops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Django</title>
       <link>https://crowdersoup.com/tags/django/</link>
       <pubDate>Fri, 08 Apr 2016 07:15:00 +0000</pubDate>
@@ -239,7 +248,7 @@
     <item>
       <title>Projects</title>
       <link>https://crowdersoup.com/tags/projects/</link>
-      <pubDate>Thu, 21 Jan 2016 13:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://crowdersoup.com/tags/projects/</guid>
       <description></description>
@@ -287,6 +296,15 @@
       <pubDate>Sat, 05 May 2018 11:45:00 +0000</pubDate>
       
       <guid>https://crowdersoup.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Servers</title>
+      <link>https://crowdersoup.com/tags/servers/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/tags/servers/</guid>
       <description></description>
     </item>
     

@@ -67,11 +67,11 @@
   <div class="blog-post-content">
     
 
-<p>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using <a href="https://ifttt.com" title="If This Then That">IFTTT</a> and a custom web app. For this project I went with <a href="https://djangoproject.org" title="Django Project">Django</a> to build my app out. I&rsquo;d never used it before so I wanted a chance to play with it.</p>
+<p>A couple months ago I decided I needed to be better about telling my wonderful wife how much I loved her on a daily basis. Being the nerd that I am I decided to tackle this using <a href="https://ifttt.com" title="If This Then That" target="_blank">IFTTT</a> and a custom web app. For this project I went with <a href="https://djangoproject.org" title="Django Project" target="_blank">Django</a> to build my app out. I&rsquo;d never used it before so I wanted a chance to play with it.</p>
 
 <h2 id="the-idea">The idea</h2>
 
-<p>The idea is pretty simple. IFTTT will, using their <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel">Maker Channel</a>, send a request to any endpoint that you want with a custom payload. I figured I could have that run daily to hit my app, which would then pull a reason that I love my wife from the database and send it to her.</p>
+<p>The idea is pretty simple. IFTTT will, using their <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel" target="_blank">Maker Channel</a>, send a request to any endpoint that you want with a custom payload. I figured I could have that run daily to hit my app, which would then pull a reason that I love my wife from the database and send it to her.</p>
 
 <p>In my case, I decided to utilize IFTTT to also <strong>send</strong> the love notes as well. The Maker Channel can not only send requests, but it can receive them as well. So I would pull a reason from the database, send that reason <strong>back</strong> to IFTTT which would then email it to my wife for me using my own Gmail account. Believe it or not, this was easier than trying to hook up my Gmail account to send the emails myself.</p>
 
@@ -81,7 +81,7 @@
 
 <p>My Django app is <strong>really</strong> simple. I have two routes, my <code>admin</code> route and a single <code>index</code> route. I&rsquo;m using the default Django admin console to add love notes to the database. The index route will handle requests from IFTTT to trigger sending a love note. It also serves up some basic HTML in case anyone accidentally finds this application in the wild. IFTTT passes along a security token so that I know when a request should trigger sending a love note or not.</p>
 
-<p>Before I dive into explaining the code, you can check out the <a href="https://github.com/CrowderSoup/LoveDB" title="Github Repo for the LoveDb">Github Repo</a> for yourself. Feel free to copy all or parts of it for your own use!</p>
+<p>Before I dive into explaining the code, you can check out the <a href="https://github.com/CrowderSoup/LoveDB" title="Github Repo for the LoveDb" target="_blank">Github Repo</a> for yourself. Feel free to copy all or parts of it for your own use!</p>
 
 <h4 id="security">Security</h4>
 
@@ -94,11 +94,11 @@ IFTTT_KEY = os.environ.get('IFTTT_KEY') or &quot;youhavemyheart&quot;
 <p>I&rsquo;m using <code>os.environ.get</code> to pull the values from my <code>Environment Variables</code>. To learn more about setting this up when you Deploy your app check out this guide check out these two links:</p>
 
 <ol>
-<li><a href="http://supervisord.org/subprocess.html#subprocess-environment" title="Subprocess Env">Using Supervisord</a></li>
-<li><a href="https://coderwall.com/p/93jakg/multiple-env-vars-with-uwsgi" title="Multiple Env Vars with uwsgi">Using uwsgi</a></li>
+<li><a href="http://supervisord.org/subprocess.html#subprocess-environment" title="Subprocess Env" target="_blank">Using Supervisord</a></li>
+<li><a href="https://coderwall.com/p/93jakg/multiple-env-vars-with-uwsgi" title="Multiple Env Vars with uwsgi" target="_blank">Using uwsgi</a></li>
 </ol>
 
-<p>The <code>IFTTT_KEY</code> might be a little confusing, but when you actually connect the <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel">Maker Channel</a> to your IFTTT account you&rsquo;ll see a part that says &ldquo;Your key is:&ldquo;. You just need to use that secrete key in your own <code>Environment Variables</code>. Please be sure not to put this value (or your <code>SECRETE_KEY</code>) in your actual code. Doing so is a huge security risk if you plan to push your code to a remote respository or share it in any way.</p>
+<p>The <code>IFTTT_KEY</code> might be a little confusing, but when you actually connect the <a href="https://ifttt.com/maker" title="IFTTT: Maker Channel" target="_blank">Maker Channel</a> to your IFTTT account you&rsquo;ll see a part that says &ldquo;Your key is:&ldquo;. You just need to use that secrete key in your own <code>Environment Variables</code>. Please be sure not to put this value (or your <code>SECRETE_KEY</code>) in your actual code. Doing so is a huge security risk if you plan to push your code to a remote respository or share it in any way.</p>
 
 <h4 id="index-route">Index Route</h4>
 
@@ -174,7 +174,7 @@ admin.site.register(Reason, ReasonAdmin)
 <li>Actions: Things that are triggered by other events.</li>
 </ol>
 
-<p>So, for my purposes I&rsquo;m going to use the <a href="https://ifttt.com/date_and_time" title="IFTTT: Date &amp; Time Channel">Date &amp; Time</a> Channel to <em>trigger</em> an <em>action</em> on the Maker Channel. The action on the Maker Channel will make a request to my Django app to trigger sending a love note.</p>
+<p>So, for my purposes I&rsquo;m going to use the <a href="https://ifttt.com/date_and_time" title="IFTTT: Date &amp; Time Channel" target="_blank">Date &amp; Time</a> Channel to <em>trigger</em> an <em>action</em> on the Maker Channel. The action on the Maker Channel will make a request to my Django app to trigger sending a love note.</p>
 
 <p>Sending of the love note will <em>also</em> be done by IFTTT. Once my app gets a love note and is ready to send it I&rsquo;ll pass it back to IFTTT, again using the Maker Channel to consume a request (this is a <em>trigger</em>).</p>
 

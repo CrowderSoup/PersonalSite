@@ -7,6 +7,9 @@ disqusShortname = "aaroncrowder"
 # Ensure site is published to "docs" folder"
 publishDir = "docs"
 
+[blackfriday]
+  hrefTargetBlank = true
+
 [params]
     author = "Aaron Crowder"
     github = "CrowderSoup"

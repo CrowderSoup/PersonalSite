@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Servers on CrowderSoup</title>
+    <link>https://crowdersoup.com/tags/servers/</link>
+    <description>Recent content in Servers on CrowderSoup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://crowdersoup.com/tags/servers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hosting Mastodon on DitialOcean</title>
+      <link>https://crowdersoup.com/post/personal/projects/socialmast.xyz/hosting-mastodon-on-digital-ocean/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://crowdersoup.com/post/personal/projects/socialmast.xyz/hosting-mastodon-on-digital-ocean/</guid>
+      <description>I&amp;rsquo;ve been toying with the idea of setting up Mastodon on my own server for a while now. Today I finally got around to actually doing it (after a failed attempt a couple months ago). I found a guide that I loosely referred to and was immensely helpful at a couple points.
+At first I tried running on a super small $5 instance, which seemed fine during setup, but died every few requests when I started using it.</description>
+    </item>
+    
+  </channel>
+</rss>

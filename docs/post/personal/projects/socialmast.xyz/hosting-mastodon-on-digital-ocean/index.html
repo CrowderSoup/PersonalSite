@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>Hosting Mastodon on DitialOcean</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarnavaltmarkup">
+            <div class="navbar-nav">
+              
+								
+            		
+                <a class="nav-item nav-link" href="/" title="home page" >Home</a>
+              
+								
+            		
+                <a class="nav-item nav-link" href="/about/" title="about page" >About</a>
+              
+								
+            		
+                <a class="nav-item nav-link" href="https://github.com/CrowderSoup" title="GitHub Profile" target="_blank">GitHub</a>
+              
+								
+            		
+                <a class="nav-item nav-link" href="https://twitter.com/CrowderSoup" title="Twitter Profile" target="_blank">Twitter</a>
+              
+								
+            		
+                <a class="nav-item nav-link" href="https://socialmast.xyz/@CrowderSoup" title="Mastodon Profile" target="_blank">Mastodon</a>
+              
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">CrowderSoup</a></h1>
+          <span id="author-name">
+            <h6>A blog by <a href="/about/">Aaron Crowder</a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Hosting Mastodon on DitialOcean</h1>
+  <div class="blog-post-subheader">
+    <time>07 Dec 2018</time>
+  </div>
+  <div class="blog-post-content">
+    
+
+<p>I&rsquo;ve been toying with the idea of setting up <a href="https://joinmastodon.org" target="_blank">Mastodon</a> on my own server for
+a while now. Today I finally got around to actually doing it (after a failed
+attempt a couple months ago). I found a <a href="https://github.com/ummjackson/mastodon-guide/blob/master/up-and-running.md" target="_blank">guide</a> that I loosely referred to
+and was immensely helpful at a couple points.</p>
+
+<p>At first I tried running on a super small $5 instance, which seemed fine during
+setup, but died every few requests when I started using it. I ended up bumping
+the server up to the $15 a month plan (3GB RAM, single CPU core) and things
+seem to be working fine now. I&rsquo;ll re-evaluate my plan if things start slowing
+down again.</p>
+
+<p>I&rsquo;m using docker to run Mastodon, so if you don&rsquo;t want to do that you&rsquo;ll have
+better luck with a different guide. I like Docker because it makes it easy to
+run the various things we need to run for Mastodon (<a href="https://sidekiq.org/" target="_blank">SideKiq</a>, PostgreSQL,
+etc.). It also makes updates easy, as you&rsquo;ll see later on.</p>
+
+<p>Okay, let&rsquo;s get started!</p>
+
+<h2 id="mailgun">Mailgun</h2>
+
+<p>First things first, let&rsquo;s set up Mailgun. Most guides I read didn&rsquo;t mention
+this until later in the guide, but it&rsquo;s important to get this out of the way
+now. It could take some time to get it configured correctly and working, and
+you&rsquo;re going to want it working properly when you get into actually setting up
+Mastodon.</p>
+
+<p>To get started, <a href="https://www.mailgun.com/" target="_blank">head on over to Mailgun</a> and sign up for a free account.
+For most people, you won&rsquo;t need to upgrade your account to a non-free one. But
+even if you do (trust me, you likely won&rsquo;t) it&rsquo;s VERY affordable. Follow
+Mailguns instructions for configuring your domain for sending email through
+their platform.</p>
+
+<p>Once you&rsquo;re done make sure you take note of the SMTP username and password.
+You&rsquo;ll need those later when you&rsquo;re configuring Mastodon.</p>
+
+<h2 id="create-a-droplet">Create a Droplet</h2>
+
+<p><img src="https://crowdersoup.com/
+assets/uploads/2018/12/create_droplet.png" alt="Create a Droplet" /></p>
+
+<p>From you Digital Ocean dashboard click on &ldquo;Create&rdquo; and then &ldquo;Droplet&rdquo; to get
+started creating your Droplet. We&rsquo;re going to use Ubuntu 18.04. Under &ldquo;Size&rdquo;
+and &ldquo;Standard&rdquo; pick the $15 a month option that has 1 CPU and 3GB of RAM.</p>
+
+<h2 id="create-your-space">Create your Space</h2>
+
+<p><img src="https://crowdersoup.com/
+assets/uploads/2018/12/create_space.png" alt="Create your Space" /></p>
+
+<p>Digital Ocean has an Amazon S3 compatible storage solution. Mastodon can use
+this to store all media files. This will cost you less than block storage for
+your VPS and will reduce load / stress on your server as well.</p>
+
+<p>The unique name you choose for you space is the &ldquo;bucket name&rdquo; that you&rsquo;ll need
+for Mastodon. Make sure to make note of it for use later. The other thing
+you&rsquo;ll want to make note of is the space endpoint:</p>
+
+<p><img src="https://crowdersoup.com/
+assets/uploads/2018/12/space_endpoints.png" alt="Space Endpoints" /></p>
+
+<h2 id="generate-space-access-keys">Generate Space Access Keys</h2>
+
+<p>You&rsquo;re going to also need some access keys so that Mastodon will be able to
+access your space. This is pretty easy to do. Just click on &ldquo;API&rdquo; in the
+sidebar to the left. Then &ldquo;Generate New Key&rdquo;, give it a name, and take note of
+the keys (especially the Secret key, as this is the last time you&rsquo;ll be able to
+view it in the Digital Ocean UI).</p>
+
+<p><img src="https://crowdersoup.com/
+assets/uploads/2018/12/space_keys.png" alt="Space Keys" /></p>
+
+<h2 id="vpc-setup">VPC setup</h2>
+
+<p>Okay, now that we&rsquo;ve got all that taken care of we&rsquo;re going to actually start
+setting up our VPC. I&rsquo;m going to assume that you know how to SSH into your
+server, so go ahead and do that.</p>
+
+<h3 id="create-a-mastodon-user">Create a Mastodon User</h3>
+
+<p>First, let&rsquo;s create a mastodon user:</p>
+
+<pre><code>adduser mastodon
+</code></pre>
+
+<p>Then, we&rsquo;ll add the user to the sudoers group:</p>
+
+<pre><code>usermod -aG sudo mastodon
+</code></pre>
+
+<p>Finally, switch to this user:</p>
+
+<pre><code>su - mastodon
+</code></pre>
+
+<h3 id="install-docker">Install Docker</h3>
+
+<p>First, we need to add the GPG key for the official Docker repo:</p>
+
+<pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</code></pre>
+
+<p>Then, well add the Docker repo to our <code>apt</code> sources:</p>
+
+<pre><code>sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable edge&quot;
+</code></pre>
+
+<p>Then we&rsquo;ll make sure that the system uses the Docker sources instead of the
+Ubuntu default:</p>
+
+<pre><code>sudo apt-cache policy docker-ce
+</code></pre>
+
+<p>Finally, let&rsquo;s install Docker:</p>
+
+<pre><code>sudo apt-get install -y docker-ce
+</code></pre>
+
+<p>To check that the install was successful let&rsquo;s check if it&rsquo;s running:</p>
+
+<pre><code>sudo systemctl status docker
+</code></pre>
+
+<h3 id="install-docker-compose">Install <code>docker-compose</code></h3>
+
+<p>The best way to get the most up to date version of <code>docker-compose</code> is to
+install it from Docker&rsquo;s GitHub repository. Ubuntu&rsquo;s official version is more
+than likely to be several (or more) minor versions behind. Before running this
+command, be sure to <a href="https://github.com/docker/compose/releases" target="_blank">check the latest version</a> on the releases page of the
+GitHub repository. If there&rsquo;s a newer version, update the command below
+accordingly.</p>
+
+<pre><code>sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+</code></pre>
+
+<p>Next, we need to make this freshly downloaded binary executable:</p>
+
+<pre><code>sudo chmod +x /usr/local/bin/docker-compose
+</code></pre>
+
+<p>And now, check that all this worked:</p>
+
+<pre><code>docker-compose --version
+</code></pre>
+
+<h2 id="get-build-configure-mastodon">Get / Build / Configure Mastodon</h2>
+
+<p>Now it&rsquo;s time to get, build, and configure Mastodon. There&rsquo;s going to be a need
+here to refer back to the noted information from before so make sure to have
+those notes ready.</p>
+
+<h3 id="get-mastodon">Get Mastodon</h3>
+
+<p>Let&rsquo;s make sure we&rsquo;re in the right place first, then clone the Mastodon repo:</p>
+
+<pre><code>cd /home/mastodon
+git clone https://github.com/tootsuite/mastodon.git
+cd mastodon
+</code></pre>
+
+<h3 id="build">Build</h3>
+
+<p>Now, before we actually configure Mastodon we need some secret keys to use. To
+do that we will build an unconfigured image and use it. Fair warning, this will
+take some time, so go get a cup of coffee while you wait.</p>
+
+<pre><code>docker-compose build
+</code></pre>
+
+<p>After that finishes you&rsquo;re going to run this command 3 times, and save the
+secret key it generates each time.</p>
+
+<pre><code>docker-compose run --rm web rake secret
+</code></pre>
+
+<h3 id="configure">Configure</h3>
+
+<p>Let&rsquo;s copy the sample config file to use as our production config file:</p>
+
+<pre><code>cp .env.production.sample .env.production
+</code></pre>
+
+<p>Go ahead and open up <code>.env.production</code> in your favorite editor. Populate
+<code>PAPERCLIP_SECRET</code>, <code>SECRET_KEY_BASE</code>, and <code>OTP_SECRET</code> with your new keys.</p>
+
+<p>Then, we need to update the following values:</p>
+
+<pre><code># Shouldn't contain the protocol part of the domain
+LOCAL_DOMAIN=&lt;YOUR_DOMAIN&gt;
+
+# Email settings
+SMTP_LOGIN=&lt;MAILGUN_SMTP_LOGIN&gt;
+SMTP_PASSWORD=&lt;MAILGUN_SMTP_PASSWORD&gt;
+SMTP_FROM_ADDRESS=notifications@&lt;YOUR_DOMAIN&gt;
+
+# Media Storage (Spaces)
+S3_ENABLED=true
+S3_BUCKET=&lt;BUCKET_NAME&gt;
+AWS_ACCESS_KEY_ID=&lt;ACCESS_KEY&gt;
+AWS_SECRET_ACCESS_KEY=&lt;SECRET_KEY&gt;
+S3_PROTOCOL=https
+S3_HOSTNAME=&lt;ENDPOINT_WITHOUT_BUCKET_NAME_OR_PROTOCOL&gt; # (sfo2.digitaloceanspaces.com)
+S3_ENDPOINT=&lt;ENDPOINT_WITHOUT_BUCKET_NAME&gt; # (https://sfo2.digitaloceanspaces.com)
+</code></pre>
+
+<p>Save those changes and close the file.</p>
+
+<h3 id="build-again">Build, Again</h3>
+
+<p>Now that our config has been updated we need to rebuild the docker image.</p>
+
+<pre><code>docker-compose build
+</code></pre>
+
+<p>Next we&rsquo;ll run the migrations:</p>
+
+<pre><code>docker-compose run --rm web rails db:migrate
+</code></pre>
+
+<p>Then pre-compile the static assets:</p>
+
+<pre><code>docker-compose run --rm web rails assets:precompile
+</code></pre>
+
+<p>Now, let&rsquo;s fire it all up:</p>
+
+<pre><code>docker-compose up -d
+</code></pre>
+
+<h2 id="install-configure-nginx">Install / Configure Nginx</h2>
+
+<p>We&rsquo;re going to use Nginx to proxy requests to Mastodon for us. First, let&rsquo;s
+install it:</p>
+
+<pre><code>sudo apt-get install nginx
+</code></pre>
+
+<p>Then, remove the default site config/symlink and create a new one for Mastodon:</p>
+
+<pre><code>sudo rm /etc/nginx/sites-available/default
+sudo rm /etc/nginx/sites-enabled/default
+sudo touch /etc/nginx/sites-available/mastodon
+sudo ln -s /etc/nginx/sites-available/mastodon /etc/nginx/sites-enabled/mastodon
+</code></pre>
+
+<p>Now, let&rsquo;s open up our Nginx config for Mastodon (located at
+<code>/etc/nginx/sites-available/mastodon</code>) and replace it with the following
+(making sure to replace <code>&lt;LOCAL_DOMAIN&gt;</code> with the same value you put in your
+Mastodon config):</p>
+
+<pre><code>map $http_upgrade $connection_upgrade {
+  default upgrade;
+  ''      close;
+}
+
+server {
+  listen 80;
+  listen [::]:80;
+  server_name &lt;LOCAL_DOMAIN&gt;;
+  root /home/mastodon/live/public;
+  # Useful for Let's Encrypt
+  location /.well-known/acme-challenge/ { allow all; }
+  location / { return 301 https://$host$request_uri; }
+}
+
+server {
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2;
+  server_name &lt;LOCAL_DOMAIN&gt;;
+
+  ssl_protocols TLSv1.2;
+  ssl_ciphers HIGH:!MEDIUM:!LOW:!aNULL:!NULL:!SHA;
+  ssl_prefer_server_ciphers on;
+  ssl_session_cache shared:SSL:10m;
+
+  keepalive_timeout    70;
+  sendfile             on;
+  client_max_body_size 80m;
+
+  root /home/mastodon/live/public;
+
+  gzip on;
+  gzip_disable &quot;msie6&quot;;
+  gzip_vary on;
+  gzip_proxied any;
+  gzip_comp_level 6;
+  gzip_buffers 16 8k;
+  gzip_http_version 1.1;
+  gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+  add_header Strict-Transport-Security &quot;max-age=31536000&quot;;
+
+  location / {
+    try_files $uri @proxy;
+  }
+
+  location ~ ^/(emoji|packs|system/accounts/avatars|system/media_attachments/files) {
+    add_header Cache-Control &quot;public, max-age=31536000, immutable&quot;;
+    try_files $uri @proxy;
+  }
+
+  location /sw.js {
+    add_header Cache-Control &quot;public, max-age=0&quot;;
+    try_files $uri @proxy;
+  }
+
+  location @proxy {
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header Proxy &quot;&quot;;
+    proxy_pass_header Server;
+
+    proxy_pass http://127.0.0.1:3000;
+    proxy_buffering off;
+    proxy_redirect off;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+
+    tcp_nodelay on;
+  }
+
+  location /api/v1/streaming {
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header Proxy &quot;&quot;;
+
+    proxy_pass http://127.0.0.1:4000;
+    proxy_buffering off;
+    proxy_redirect off;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+
+    tcp_nodelay on;
+  }
+
+  error_page 500 501 502 503 504 /500.html;
+}
+</code></pre>
+
+<p>Save and close this config.</p>
+
+<h2 id="https-thanks-to-let-s-encrypt-6">HTTPS Thanks to <a href="https://letsencrypt.org/" target="_blank">Let&rsquo;s Encrypt</a></h2>
+
+<p>Setting up an SSL cert so we can use HTTPS is essential. Thankfully this is
+easily accomplished using <code>certbot</code> to get an SSL cert from Let&rsquo;s Encrypt. You
+first must add the PPA for <code>certbot</code>:</p>
+
+<pre><code>sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+</code></pre>
+
+<p>Then install it:</p>
+
+<pre><code>sudo apt-get install python-certbot-nginx
+</code></pre>
+
+<p>Next, let&rsquo;s stop Nginx:</p>
+
+<pre><code>sudo systemctl stop nginx.service
+</code></pre>
+
+<p>Then use certbot to obtain and configure our cert for use with Nginx:</p>
+
+<pre><code>sudo certbot --nginx -d &lt;LOCAL_DOMAIN&gt;
+</code></pre>
+
+<h2 id="run-mastodon-for-real-this-time">Run Mastodon (for real this time)</h2>
+
+<p>Okay, we&rsquo;re getting close to the end! Now, we&rsquo;re going to shut down Mastodon
+running in docker, rebuild the image, recompile the assets, and rerun
+migrations making sure that nothing fails before bringing everything back
+online:</p>
+
+<pre><code>docker-compose down
+docker-compose build
+docker-compose run --rm web rails assets:precompile
+docker-compose run --rm web rails db:migrate
+docker-compose up -d
+</code></pre>
+
+<p>Now, if all that worked go ahead and start Nginx back up:</p>
+
+<pre><code>sudo systemctl restart nginx.service
+</code></pre>
+
+<p>If all went according to plan you should be able to open up your domain in your
+web browser and see your Mastodon instance! Go ahead and create and account and
+make sure you can do some basic things like edit your profile, upload
+a picture, etc.</p>
+
+<h2 id="make-your-user-an-admin">Make your user an Admin</h2>
+
+<p>Once you&rsquo;ve played around with Mastodon a bit let&rsquo;s get back in the command
+line and make your user an Admin so you can administer your instance.</p>
+
+<pre><code>docker-compose run --rm web ./bin/tootctl accounts modify &lt;YOUR_USERNAME&gt; --role admin
+</code></pre>
+
+<p>You should see something like the following:</p>
+
+<pre><code>Starting mastodon_redis_1 ...
+Starting mastodon_db_1 ... done
+OK
+</code></pre>
+
+<p>If so you can go to <code>https://&lt;YOUR_INSTANCE&gt;/admin/dashboard</code> and check out
+what&rsquo;s available to you as an admin. Something I would strongly encourage you
+do is close registrations until you&rsquo;re sure you want other people to register
+on your instance freely.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Whew! You made is this far! If if all worked you now have a VPS in DigitalOcean
+running Mastodon on docker. All your media is being stored in S3 compatible
+Spaces. And you&rsquo;re part of the fediverse!</p>
+
+<p>If it all worked for you give me a shout, I&rsquo;m <a href="https://socialmast.xyz/@CrowderSoup" target="_blank">@CrowderSoup@socialmast.xyz</a>.
+If not, leave a comment with where things went wrong!</p>
+
+<!--Links-->
+
+  </div>
+  
+<div id="disqus_thread"></div>
+<script>
+  var disqus_shortname = 'aaroncrowder';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 Aaron Crowder.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/crowdersoup/basics-plus" target="_blank">Basics Plus</a> theme.
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+
