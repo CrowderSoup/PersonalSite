@@ -21,27 +21,27 @@ publishDir = "docs"
     title = "home page"
     url = "/"
     weight = -110 # Ensure "Home" page is first
-	[[menu.main]]
-		identifier = "about"
-		name = "About"
-		title = "about page"
-		url = "/about/"
-		weight = -109 # Ensure "About" page is second
-	[[menu.main]]
-		identifier = "GitHub"
-		name = "GitHub"
-		title = "GitHub Profile"
-		url = "https://github.com/CrowderSoup"
-		weight = 1
-	[[menu.main]]
-		identifier = "Twitter"
-		name = "Twitter"
-		title = "Twitter Profile"
-		url = "https://twitter.com/CrowderSoup"
-		weight = 2
-	[[menu.main]]
-		identifier = "Mastodon"
-		name = "Mastodon"
-		title = "Mastodon Profile"
-		url = "https://socialmast.xyz/@CrowderSoup"
-		weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    title = "about page"
+    url = "/about/"
+    weight = -109 # Ensure "About" page is second
+  [[menu.main]]
+    identifier = "GitHub"
+    name = "GitHub"
+    title = "GitHub Profile"
+    url = "https://github.com/CrowderSoup"
+    weight = 1
+  [[menu.main]]
+    identifier = "Twitter"
+    name = "Twitter"
+    title = "Twitter Profile"
+    url = "https://twitter.com/CrowderSoup"
+    weight = 2
+  [[menu.main]]
+    identifier = "Mastodon"
+    name = "Mastodon"
+    title = "Mastodon Profile"
+    url = "https://socialmast.xyz/@CrowderSoup"
+    weight = 3
