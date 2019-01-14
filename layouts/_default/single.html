@@ -1,0 +1,12 @@
+{{ define "content" }}
+<div class="blog-post h-entry">
+  <h1 class="p-name">{{ .Title }}</h1>
+  <div class="blog-post-subheader">
+    <time class="dt-published">{{ .Date.Format "02 Jan 2006" }}</time>
+  </div>
+  <div class="blog-post-content e-content">
+    {{ .Content }}
+  </div>
+  {{ partial "disqus" . }}
+</div>
+{{ end }}
