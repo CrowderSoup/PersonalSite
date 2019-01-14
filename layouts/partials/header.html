@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <!-- load bootstrap css -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <!-- IndieWeb Things  -->
+        <link rel="authorization_endpoint" href="https://indielogin.com/auth">
+        <link rel="webmention" href="https://webmention.io/crowdersoup.com/webmention" />
+        <link rel="pingback" href="https://webmention.io/crowdersoup.com/xmlrpc" />
+
+        <title>{{.Title}}</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          <!-- empty brandname ensures toggler is on the right; hack really -->
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarnavaltmarkup">
+            <div class="navbar-nav">
+              {{ range .Site.Menus.main }}
+                {{ $url := urls.Parse .URL }}
+                {{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
+                <a class="nav-item nav-link" href="{{ .URL }}" title="{{ .Title }}" rel="me" {{ if ne $url.Host $baseurl.Host }}target="_blank"{{ end }}>{{ .Name }}</a>
+              {{ end }}
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">{{ .Site.Title | default "Basics"}}</a></h1>
+          <span id="author-name">
+            <h6>A blog by <a class="h-card" rel="me" href="/about/">{{ .Site.Params.Author }}</a></h6>
+          </span>
+        </section>
